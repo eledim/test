@@ -1,0 +1,9 @@
+.choose {
+    position: absolute;
+    z-index: 1;
+    /*margin-left: 40px;*/
+    /*left: 300px;*/
+}
+select:last-child{
+    color: #800080;
+}
