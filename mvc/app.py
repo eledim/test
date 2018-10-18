@@ -3,7 +3,10 @@
 
 from flask import Flask, request, render_template
 import mysql.connector
+import uuid
+import json
 
+from flask import jsonify
 app = Flask(__name__)
 # site = 'http://eledim.xyz/'
 site = 'http://127.0.0.1:5000/'
@@ -22,28 +25,54 @@ def signin():
     if username=='admin' and password=='password':
         return render_template('signin-ok.html', username=username)
     return render_template('form.html', message='Bad username or password', username=username)
-
-@app.route('/confirm_key', methods=['POST'])
-def confirm_key():
-    key = request.form['key']
-    dungeon = request.form['dungeon']
+def getConn():
     # conn = mysql.connector.connect(user='root', password='1234][po', database='forum')
     # 也可以使用字典进行连接参数的管理
     config = {
-        'host': '127.0.0.1',
+        'host': '127.0.0.1',  # '108.61.220.188',
         'port': 3306,
         'user': 'root',
         'passwd': '1234][po',
-        'db': 'forum',
+        'db': 'wow_key',
         'charset': 'utf8'
     }
-    conn = mysql.connector.connect(**config)
+    config2 = {
+        'host': '108.61.220.188',
+        'port': 3306,
+        'user': 'root',
+        'passwd': 'a498211713',
+        'db': 'wow_key',
+        'charset': 'utf8'
+    }
+    # conn = mysql.connector.connect(host = '108.61.220.188', user="root", passwd="a498211713", database="wow_key", use_unicode=True)
 
+    conn = mysql.connector.connect(**config)
+    return conn
+
+@app.route('/confirm_key', methods=['POST'])
+def confirm_key():
+    level = request.form['level']
+    dungeon = request.form['dungeon']
+    id = str(uuid.uuid1());
+    conn = getConn()
     cursor = conn.cursor()
-    cursor.execute('insert into user (id, key,username) values (%s, %s,%s)', ['2', '2', 'chen'])
+    cursor.execute('insert into userkey (id, level,dungeon) values (%s, %s,%s)', [id, level, dungeon])
     cursor.rowcount
     conn.commit()
     cursor.close()
+    conn.close()
+    return jsonify("")
 
+@app.route('/query_key', methods=['POST'])
+def query_key():
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.execute('select dungeon,level,userid from userkey')
+    values = cursor.fetchall()
+    json_str = json.dumps(values,ensure_ascii=False)
+    cursor.close()
+    conn.close()
+    return jsonify(values)
 if __name__ == '__main__':
     app.run()
+
