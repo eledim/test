@@ -9,10 +9,10 @@ import json
 from flask import jsonify
 app = Flask(__name__)
 # site = 'http://eledim.xyz/'
-site = 'http://127.0.0.1:5000/'
+#site = 'http://127.0.0.1:5000/'
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html',site=site)
+    return render_template('home.html')
 
 @app.route('/signin', methods=['GET'])
 def signin_form():
@@ -44,9 +44,17 @@ def getConn():
         'db': 'wow_key',
         'charset': 'utf8'
     }
+    config3 = {
+        'host': '192.168.43.135',
+        'port': 3306,
+        'user': 'root',
+        'passwd': '1234][Po',
+        'db': 'wow_key',
+        'charset': 'utf8'
+    }
     # conn = mysql.connector.connect(host = '108.61.220.188', user="root", passwd="a498211713", database="wow_key", use_unicode=True)
 
-    conn = mysql.connector.connect(**config)
+    conn = mysql.connector.connect(**config3)
     return conn
 
 @app.route('/confirm_key', methods=['POST'])
