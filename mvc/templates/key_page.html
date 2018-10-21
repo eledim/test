@@ -2,8 +2,10 @@
 {% block title %} Welcome, {{ username }} {% endblock %}
 {% block content %}
 
-<div class="center">
-<p>Welcome, {{ username }}!</p>
+<div class="center margin-padding">
+    <div class="right">
+        <p class="inline">Welcome, {{ username }}!</p><span><a id = "logout" class="logout" href="javascript(0);">Logout</a></span>
+    </div>
     {% autoescape false %}
     <select name="" id="dungeon">
         <option value="">自由镇</option>
@@ -52,4 +54,5 @@
 {% block js %}
 <script src='{{ url_for("static", filename="js/key-page.js") }}'></script>
 <script src='{{ url_for("static", filename="js/vm.js") }}'></script>
+<script src="static/js/signin.js" type="text/javascript"></script>
 {% endblock %}

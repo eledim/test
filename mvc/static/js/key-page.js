@@ -1,4 +1,4 @@
-var sendKey = function(fnSuccess,fnError) {
+var ajax_sendKey = function(fnSuccess, fnError) {
 		$.ajax({
 			type: "post",
 			url: site + "confirm_key",
@@ -7,6 +7,7 @@ var sendKey = function(fnSuccess,fnError) {
 			data: {
 				dungeon: $("#dungeon").find("option:selected").text(),
                 level:$("#level").val(),
+				username:$.cookie('username'),
 			},
 			success: function(data) {
 				if (fnSuccess != undefined && typeof(fnSuccess) == "function") {
@@ -20,7 +21,7 @@ var sendKey = function(fnSuccess,fnError) {
 			}
 		});
 	};
-var query_key = function(fnSuccess,fnError) {
+var ajax_query_key = function(fnSuccess, fnError) {
 		$.ajax({
 			type: "post",
 			url: site + "query_key",
@@ -60,9 +61,29 @@ $(function () {
 		oNodeTable.clear();
 		oNodeTable.rows.add(data).draw();
 	}
-	query_key(updateTable);
+	var checkCookie = function(username,password,data){
+		if(data.indexOf('ok') != -1){
+			console.log("sinin success");
+		}else{
+			$(location).attr('href', site + "signin");
+		}
+		//$(document.body).html(data);
+	};
+	ajax_singin($.cookie('username'),$.cookie('password'),checkCookie);
+
+	var query_key = function(){
+	    ajax_query_key(updateTable);
+    }
+	query_key();
 	$("#confirm_key").on("click",function () {
-	   sendKey();
-	   query_key(updateTable);
+		ajax_sendKey(query_key);
 	});
+	$("#logout").on("click",function () {
+		event.preventDefault();
+		$(location).attr('href', site + "signin");
+		$.cookie('username',null);
+		$.cookie('password',null);
+	});
+
+
 })

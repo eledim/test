@@ -1,7 +1,19 @@
-{% extends 'base.html' %}
-{% block title %} Home {% endblock %}
-{% block content %}
 
-  <h1 style="font-style:italic">Home</h1>
-  <a href="javascrip(0)" id = "login">登录</a>
+{% extends 'base.html' %}
+{% block title %} Please Sign In {% endblock %}
+{% block content %}
+<div class="center">
+  <h1 >钥石PY</h1>
+  {% if message %}
+  <p style="color:red">{{ message }}</p>
+  {% endif %}
+  <form action="/signin" method="post">
+    <!--<legend>Please sign in:</legend>-->
+    <p><input name="username" placeholder="Username" value="{{ username }}"></p>
+    <p><input name="password" placeholder="Password" type="password"></p>
+    <p><button type="submit" class="btn btn-success">登录</button></p>
+
+  </form>
+</div>
+
 {% endblock %}

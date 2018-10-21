@@ -5,3 +5,20 @@ select {
 .center {
     text-align: center;
 }
+.right{
+    text-align: right;
+}
+.margin-padding{
+    margin: 5px;
+}
+.inline{
+    display: inline;
+}
+.logout{
+    margin-left: 5px;
+    color: #23527c;
+    font-weight:bold;
+}
+.block{
+    display:block;
+}
