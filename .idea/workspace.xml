@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a9d2d15c-68bb-44aa-bdd7-e70cce2e261f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a9d2d15c-68bb-44aa-bdd7-e70cce2e261f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvc/static/css/wow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvc/static/js/key-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/dragon.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/css/dragon.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/static/js/key-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/key-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/vm.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/vm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/templates/key_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/key_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,98 +64,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="key_page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+            <state relative-caret-position="264">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/static/js/signin.js">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="408">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constant.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/static/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="-4448">
+              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-jquery.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/static/css/test-jquery.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="key-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            <state relative-caret-position="696">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Anaconda3/Lib/site-packages/flask/app.py">
+      <file leaf-file-name="key-class.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/static/js/key-class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="1810" column="23" lean-forward="true" selection-start-line="1810" selection-start-column="23" selection-end-line="1810" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_compat.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Anaconda3/Lib/site-packages/flask/_compat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testList.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="144">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
-                <element signature="e#142#164#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cursor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/mysql/connector/cursor.py">
+      <file leaf-file-name="key_page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="538" column="46" lean-forward="true" selection-start-line="538" selection-start-column="46" selection-end-line="538" selection-end-column="46" />
+            <state relative-caret-position="111">
+              <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mvc/app.py">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/templates/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="106" column="81" lean-forward="true" selection-start-line="106" selection-start-column="81" selection-end-line="106" selection-end-column="81" />
+            <state relative-caret-position="264">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
               <folding>
-                <element signature="e#48#105#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wow.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/static/css/wow.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="1651" column="131" selection-start-line="1651" selection-start-column="121" selection-end-line="1651" selection-end-column="131" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dragon.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -163,8 +169,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -178,11 +184,36 @@
       <find>&quot;) }}</find>
       <find>setCookieAndReLoc</find>
       <find>updateTable</find>
+      <find>&lt;/option&gt;</find>
+      <find>\s.+\n</find>
+      <find>\n\s{8}</find>
+      <find>&quot;\n</find>
+      <find>]{</find>
+      <find>,</find>
+      <find>large</find>
+      <find>table.dataTable.display tbody tr.odd</find>
+      <find>small</find>
+      <find>..</find>
+      <find>key_table_wrapper</find>
+      <find>#170e09</find>
+      <find>key-input</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;/option&gt;</replace>
       <replace>/static</replace>
       <replace>static/</replace>
+      <replace>\s.+&quot;\n</replace>
+      <replace>\n\s{8}&quot;</replace>
+      <replace>&quot;\n        &quot;</replace>
+      <replace>&quot;: &quot;&quot;\n</replace>
+      <replace>&quot;&quot;,</replace>
+      <replace>: &quot;#</replace>
+      <replace>:{color :</replace>
+      <replace>,img:''},</replace>
+      <replace>small</replace>
+      <replace>], {</replace>
+      <replace>tiny</replace>
+      <replace>https://www.wowchina.com/static</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -203,23 +234,24 @@
         <option value="$PROJECT_DIR$/mvc/templates/form.html" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/mvc/static/css/wow.css" />
-        <option value="$PROJECT_DIR$/mvc/static/js/vm.js" />
         <option value="$PROJECT_DIR$/mvc/static/js/key-page.py" />
         <option value="$PROJECT_DIR$/mvc/static/js/key.js" />
         <option value="$PROJECT_DIR$/mvc/static/js/index.js" />
         <option value="$PROJECT_DIR$/mvc/templates/home.html" />
         <option value="$PROJECT_DIR$/mvc/templates/signin-ok.html" />
         <option value="$PROJECT_DIR$/mvc/templates/signin.html" />
-        <option value="$PROJECT_DIR$/mvc/templates/base.html" />
         <option value="$PROJECT_DIR$/testList.py" />
-        <option value="$PROJECT_DIR$/mvc/templates/test.html" />
-        <option value="$PROJECT_DIR$/mvc/static/css/dragon.css" />
         <option value="$PROJECT_DIR$/mvc/static/js/signin.js" />
         <option value="$PROJECT_DIR$/mvc/static/js/constant.js" />
         <option value="$PROJECT_DIR$/mvc/util.py" />
-        <option value="$PROJECT_DIR$/mvc/static/js/key-page.js" />
-        <option value="$PROJECT_DIR$/mvc/templates/key_page.html" />
         <option value="$PROJECT_DIR$/mvc/app.py" />
+        <option value="$PROJECT_DIR$/mvc/static/js/key-page.js" />
+        <option value="$PROJECT_DIR$/mvc/static/js/key-class.js" />
+        <option value="$PROJECT_DIR$/mvc/static/js/vm.js" />
+        <option value="$PROJECT_DIR$/mvc/templates/base.html" />
+        <option value="$PROJECT_DIR$/mvc/templates/test.html" />
+        <option value="$PROJECT_DIR$/mvc/templates/key_page.html" />
+        <option value="$PROJECT_DIR$/mvc/static/css/dragon.css" />
       </list>
     </option>
   </component>
@@ -233,10 +265,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="718" />
+    <option name="x" value="577" />
     <option name="y" value="205" />
     <option name="width" value="1283" />
-    <option name="height" value="789" />
+    <option name="height" value="847" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -261,6 +293,13 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="mvc" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
@@ -301,11 +340,11 @@
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\js\lib" />
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\js" />
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static" />
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -320,7 +359,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app (1)">
+  <component name="RunManager" selected="JavaScript Debug.test.html">
     <configuration name="base.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/mvc/templates/base.html" />
     <configuration name="test.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/mvc/templates/test.html" />
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -385,8 +424,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app (1)" />
         <item itemvalue="JavaScript Debug.test.html" />
+        <item itemvalue="Python.app (1)" />
         <item itemvalue="JavaScript Debug.base.html" />
         <item itemvalue="Python.testList" />
         <item itemvalue="Python tests.py.test for testList.test_var_args" />
@@ -446,15 +485,15 @@
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" weight="0.44312027" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.61507934" visible="true" weight="0.22761194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61507934" visible="true" weight="0.22761194" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.09115139" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.124200426" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4984375" weight="0.32719395" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Structure" order="5" sideWeight="0.38492063" weight="0.1130064" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.32936078" />
       <window_info id="Favorites" order="1" sideWeight="0.5005417" side_tool="true" weight="0.16950959" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49960536" visible="true" weight="0.30119178" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960536" visible="true" weight="0.30119178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -509,19 +548,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/jquery.dataTables.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/images/sort_asc.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/static/js/lib/vue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -545,24 +571,7 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.py" />
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/test-jquery.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/vm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/templates/form.html" />
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/templates/signin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -685,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/static/js/lib/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -718,23 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/static/js/lib/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
@@ -749,20 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/signin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Anaconda3/Lib/site-packages/flask/_compat.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -770,17 +738,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/mvc/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="62" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="62" />
+        <state relative-caret-position="960">
+          <caret line="100" column="13" lean-forward="true" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+          <folding>
+            <element signature="e#48#105#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testList.py">
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/mysql/connector/cursor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="390">
+          <caret line="538" column="46" lean-forward="true" selection-start-line="538" selection-start-column="46" selection-end-line="538" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -794,24 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/mysql/connector/cursor.py">
+    <entry file="file://$PROJECT_DIR$/testList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="538" column="46" lean-forward="true" selection-start-line="538" selection-start-column="46" selection-end-line="538" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        <state relative-caret-position="624">
+          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -822,13 +779,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/app.py">
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/jquery.dataTables.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="106" column="81" lean-forward="true" selection-start-line="106" selection-start-column="81" selection-end-line="106" selection-end-column="81" />
+        <state relative-caret-position="433">
+          <caret column="2170" selection-start-column="2134" selection-end-column="2170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/vm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/signin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="e#48#105#0" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4448">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/test-jquery.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/wow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="1651" column="131" selection-start-line="1651" selection-start-column="121" selection-end-line="1651" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>

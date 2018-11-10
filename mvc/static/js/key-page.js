@@ -29,10 +29,18 @@ $(function () {
         ],
 		dom:'<"top"lf>rt<"bottom"ip><"clear">',
 	});
+    var handleTableRows =function(data){
+        var rows = data.map(function (row) {
+            return new KeyRow(row).getRow();
+        });
+        return rows;
+    };
+
 
 	var updateTable = function(data){
+	    var rows = handleTableRows(data);
 		oNodeTable.clear();
-		oNodeTable.rows.add(data).draw();
+		oNodeTable.rows.add(rows).draw();
 	};
 
 	var checkCookie = function(data){
