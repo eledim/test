@@ -2,9 +2,12 @@
 {% block title %} Welcome, {{ username }} {% endblock %}
 {% block content %}
 
-<div class="center margin-padding">
+<div class="center page_margin ">
     <div class="right">
-        <p class="inline">Welcome, {{ username }}!</p><span><a id = "logout" class="logout" href="javascript(0);">Logout</a></span>
+        <p class="inline">Welcome, {{ username }}!</p>
+        <span>
+            <a id = "logout" class="logout" href="javascript(0);">Logout</a>
+        </span>
     </div>
     {% autoescape false %}
     <select name="" id="dungeon">
@@ -24,6 +27,7 @@
             [[ item ]]
         </option>
     </select>
+    <input type="text" class="form-control key-input">
     <button id = "confirm_key" type="submit" class="btn btn-success">确定</button>
 <!--<p>自由镇</p>-->
 <!--<p>诸王之眠</p>-->
@@ -35,7 +39,7 @@
 <!--<p>风暴神殿</p>-->
 <!--<p>维克雷斯庄园</p>-->
 <!--<p>托尔达戈</p>-->
-    <table class="table" id = "key_table">
+    <table class="table table_width" id = "key_table">
         <thead>
             <tr>
                 <th>副本</th>

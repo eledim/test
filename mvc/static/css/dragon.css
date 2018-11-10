@@ -8,8 +8,16 @@ select {
 .right{
     text-align: right;
 }
-.margin-padding{
-    margin: 5px;
+.page_margin{
+    margin: 10px 30px 10px 30px;
+}
+#key_table_wrapper{
+    width: 50%;
+    margin: 30px auto 15px auto;
+}
+.key-input{
+    width: 120px;
+    display: inline-block;
 }
 .inline{
     display: inline;
@@ -21,4 +29,7 @@ select {
 }
 .block{
     display:block;
+}
+.top input[type=search] {
+    -webkit-appearance: textarea;
 }
