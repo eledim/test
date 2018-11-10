@@ -3,6 +3,7 @@ var ajax_sendKey = function(fnSuccess, fnError) {
 		dungeon: $("#dungeon").find("option:selected").text(),
 		level:$("#level").val(),
 		username:$.cookie('username'),
+        character:$("#character").find("option:selected").text(),
 	};
 	ajax(data,"confirm_key", fnSuccess, fnError);
 };
@@ -24,6 +25,7 @@ $(function () {
             { title: "副本","class": "center" },
             { title: "等级" ,"class": "center" },
             { title: "用户昵称" ,"class": "center" },
+            { title: "职业" ,"class": "center" },
         ],
 		dom:'<"top"lf>rt<"bottom"ip><"clear">',
 	});

@@ -53,14 +53,14 @@ def exe_sql(sql_str,params=(),is_query=()):
     conn = getConn()
     cursor = conn.cursor()
     cursor.execute(sql_str, params)
-    values = 0;
+    ret = 0;
     if sql_str.find("se", 0, 3) >= 0:
-        values = cursor.fetchall()
+        ret = cursor.fetchall()
         cursor.rowcount
     conn.commit()
     cursor.close()
     conn.close()
-    return values
+    return ret
 
 
 def ret_err_json(str):
