@@ -36,13 +36,19 @@ $(function () {
         return rows;
     };
 
-
+    /**
+     * 回调，渲染表格数据
+     * @param data
+     */
 	var updateTable = function(data){
 	    var rows = handleTableRows(data);
 		oNodeTable.clear();
 		oNodeTable.rows.add(rows).draw();
 	};
-
+    /**
+     * 回调，校验cookie用户密码
+     * @param data
+     */
 	var checkCookie = function(data){
 		if(data.stat == "ok"){
 			console.log("sinin success");
@@ -51,12 +57,18 @@ $(function () {
 		}
 		//$(document.body).html(data);
 	};
+    /**
+     * 重定位
+     */
 	var reLocation = function(){
 	    $(location).attr('href', site + "signin");
     }
 	ajax_singin($.cookie('username'),$.cookie('password'),checkCookie,reLocation);
-
+    /**
+     * 回调，更新表格
+     */
 	var query_key = function(){
+	    $(".dataTables_filter input").addClass("form-control search-input");
 	    ajax_query_key(updateTable);
     };
 
@@ -68,7 +80,7 @@ $(function () {
 
 	$("#logout").on("click",function () {
 		event.preventDefault();
-		$(location).attr('href', site + "signin");
+		reLocation();
 		$.cookie('username',null);
 		$.cookie('password',null);
 	});

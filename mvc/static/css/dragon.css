@@ -2,10 +2,18 @@ body{
     background-color: #0b1319 !important;/*rgba(10, 19, 25, 0.5);*//*background: #0b1319;*//*#d1d7e1;*/
     background:#0b1319 !important;
     color: #ebdec2;
+    font-size: 14px;
+}
+.top{
+    /*color: #ebdec2;*/
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #ebdec2;
 }
 .key-form{
     margin-top:50px;
 }
+
 select.metro-35 {
     height: 38px;
     width: 120px;
@@ -22,7 +30,23 @@ select {
 input{
     color:#ebdec2;
     height: 25px;
-    background-color: rgba(10, 19, 25,0.9);
+    background-color: rgba(10, 19, 25,0.4);
+}
+.key-input{
+    color: #ebdec2;
+    height: 38px;
+    width: 120px;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: rgba(10, 19, 25,0.6);
+}
+.search-input{
+    color: #ebdec2;
+    height: 28px;
+    width: 140px;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: rgba(10, 19, 25,0.4);
 }
 .confirm-btn{
     /*display: inline-block;*/
@@ -47,14 +71,7 @@ input{
     width: 50%;
     margin: 80px auto 15px auto;
 }
-.key-input{
-    color: #ebdec2;
-    height: 38px;
-    width: 120px;
-    display: inline-block;
-    border-radius: 1px;
-    background-color: rgba(10, 19, 25,0.9);
-}
+
 .inline{
     display: inline;
 }

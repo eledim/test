@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/mvc/static/css/wow.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvc/static/js/key-class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/static/css/dragon.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/css/dragon.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/static/js/key-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/key-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/static/js/vm.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/vm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/templates/key_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/key_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/test.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,18 +57,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvc/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvc/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,8 +83,17 @@
       <file leaf-file-name="key-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="408">
+              <caret line="74" column="69" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constant.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -111,8 +101,8 @@
       <file leaf-file-name="key-class.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvc/static/js/key-class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="-473">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
               </folding>
@@ -123,7 +113,7 @@
       <file leaf-file-name="key_page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1608">
               <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -156,8 +146,8 @@
       <file leaf-file-name="dragon.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="336">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -192,11 +182,12 @@
       <find>,</find>
       <find>large</find>
       <find>table.dataTable.display tbody tr.odd</find>
-      <find>small</find>
       <find>..</find>
       <find>key_table_wrapper</find>
-      <find>#170e09</find>
       <find>key-input</find>
+      <find>#170e09</find>
+      <find>small</find>
+      <find>web</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;/option&gt;</replace>
@@ -245,12 +236,12 @@
         <option value="$PROJECT_DIR$/mvc/static/js/constant.js" />
         <option value="$PROJECT_DIR$/mvc/util.py" />
         <option value="$PROJECT_DIR$/mvc/app.py" />
-        <option value="$PROJECT_DIR$/mvc/static/js/key-page.js" />
         <option value="$PROJECT_DIR$/mvc/static/js/key-class.js" />
         <option value="$PROJECT_DIR$/mvc/static/js/vm.js" />
         <option value="$PROJECT_DIR$/mvc/templates/base.html" />
         <option value="$PROJECT_DIR$/mvc/templates/test.html" />
         <option value="$PROJECT_DIR$/mvc/templates/key_page.html" />
+        <option value="$PROJECT_DIR$/mvc/static/js/key-page.js" />
         <option value="$PROJECT_DIR$/mvc/static/css/dragon.css" />
       </list>
     </option>
@@ -800,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -827,16 +811,6 @@
     <entry file="file://$PROJECT_DIR$/mvc/static/css/test-jquery.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -854,20 +828,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvc/templates/key_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="1608">
           <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/constant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -878,10 +852,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-473">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/js/key-page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <caret line="74" column="69" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvc/static/css/dragon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
