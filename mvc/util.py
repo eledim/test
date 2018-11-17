@@ -54,7 +54,7 @@ def exe_sql(sql_str,params=(),is_query=()):
     cursor = conn.cursor()
     cursor.execute(sql_str, params)
     ret = 0;
-    if sql_str.find("se", 0, 3) >= 0:
+    if sql_str.find("se", 0, 3) >= 0 or sql_str.find("S", 0, 3) >= 0:
         ret = cursor.fetchall()
         cursor.rowcount
     conn.commit()

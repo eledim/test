@@ -78,7 +78,7 @@ $(function () {
 		ajax_sendKey(query_key);
 	});
 
-	$("#logout").on("click",function () {
+	$("#logout").on("click",function (event) {
 		event.preventDefault();
 		reLocation();
 		$.cookie('username',null);

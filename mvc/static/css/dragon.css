@@ -27,11 +27,11 @@ select {
     width: 120px;
     background-color: rgba(10, 19, 25,0.9);
 }
-input{
-    color:#ebdec2;
-    height: 25px;
-    background-color: rgba(10, 19, 25,0.4);
-}
+/*input{*/
+    /*color:#ebdec2;*/
+    /*height: 25px;*/
+    /*background-color: rgba(10, 19, 25,0.4);*/
+/*}*/
 .key-input{
     color: #ebdec2;
     height: 38px;

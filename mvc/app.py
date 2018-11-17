@@ -118,11 +118,21 @@ def confirm_key():
 @app.route('/query_key', methods=['POST'])
 def query_key():
     #values = exe_sql('select dungeon,level,username,class from userkey,user,`character` where userkey.userid =user.userid and userkey.character_id =`character`.character_id')
-    values = exe_sql(
-        'select dungeon,level,'
-        '(select username from user where user.userid = userkey.userid)as username,'
-        '(select class from `character` where userkey.character_id =`character`.character_id )as class '
-        'from userkey')
+    sql = 'select dungeon,level,'\
+          '(select username from user where user.userid = userkey.userid)as username,'\
+          '(select class from `character` where userkey.character_id =`character`.character_id )as class '\
+          'from userkey'
+
+    sql3 = 'SELECT a.*,`user`.username from ' \
+          '(SELECT userkey.*,`character`.class FROM userkey join `character` on userkey.character_id = `character`.character_id) as a ' \
+          'JOIN `user` ' \
+          'on a.userid = `user`.userid';
+
+    sql2 = 'SELECT dungeon,level,`user`.username,`character`.class ' \
+           'FROM userkey join `character` on userkey.character_id = `character`.character_id ' \
+            'JOIN `user` on userkey.userid = `user`.userid'
+
+    values = exe_sql(sql2)
     json_str = json.dumps(values, ensure_ascii=False)
     return jsonify(values)
 
