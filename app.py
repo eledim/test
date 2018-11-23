@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#https://www.cnblogs.com/shanrengo/p/6479271.html
 from flask import Flask
 from flask import request
 
