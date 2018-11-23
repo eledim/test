@@ -1,30 +1,63 @@
 {% extends 'base.html' %}
 {% block title %} Welcome, {{ username }} {% endblock %}
 {% block content %}
-
-<div class="center margin-padding">
-    <div class="right">
-        <p class="inline">Welcome, {{ username }}!</p><span><a id = "logout" class="logout" href="javascript(0);">Logout</a></span>
+<div class="Pane-bg" style="background-color:#0a1319;background-image:url(&quot;https://cms-origin-cn.battle.net/cms/template_resource/qd/QDU3RGYJLHQQ1474350268997.jpg&quot;);">
+    <div class="Pane-overlay"></div>
+</div>
+<div class="Pane-content">
+<div class="center page_margin ">
+    <div class=" ">
+        <div class="right">
+            <p class="inline">Welcome, {{ username }}!</p>
+            <span>
+                <a id = "logout" class="logout" href="javascript(0);">Logout</a>
+            </span>
+        </div>
+        <div class="key-form SiteNav-pageLink">
+            {% autoescape false %}
+            <select name="" id="dungeon" class="metro-35">
+                <option value="">自由镇</option>
+                <option value="">诸王之眠</option>
+                <option value="">暴富矿区</option>
+                <option value="">地渊孢林</option>
+                <option value="">围攻帕拉勒斯</option>
+                <option value="">阿塔达萨</option>
+                <option value="">塞塔里斯神庙</option>
+                <option value="">风暴神殿</option>
+                <option value="">维克雷斯庄园</option>
+                <option value="">托尔达戈</option>
+            </select>
+            <select name="" id="level" class="metro-35">
+                <option v-for="item in items" :value="[[item]]">
+                    [[ item ]]
+                </option>
+            </select>
+            <select name="" id="character" class="metro-35">
+                <option value="Hunter">猎人Hunter</option>
+                <option value="Paladin">圣骑士Paladin</option>
+                <option value="Druid">德鲁伊Druid</option>
+                <option value="Warior">战士Warior</option>
+                <option value="Mage">法师Mage</option>
+                <option value="Priest">牧师Priest</option>
+                <option value="Death Knight">死亡骑士Death Knight</option>
+                <option value="Warlock">术士Warlock</option>
+                <option value="Rogue">潜行者Rogue</option>
+                <option value="Shaman">萨满祭司Shaman</option>
+                <option value="Monk">武僧Monk</option>
+                <option value="Demon Hunter">恶魔猎手Demon Hunter</option>
+            </select>
+            <input type="text" class="form-control key-input">
+            <!--<button id = "confirm_key" type="submit" class="btn btn-success">确定</button>-->
+            <div class="<!--List-item gutter-normal--> confirm-btn" id ="confirm_key">
+                <a class="Link Button Button--ghost TalentCalculator-reset" queryselectoralways="30">
+                    <div class="Button-outer">
+                        <div class="Button-inner">
+                        <div class="Button-label" data-text="提交">提交</div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-    {% autoescape false %}
-    <select name="" id="dungeon">
-        <option value="">自由镇</option>
-        <option value="">诸王之眠</option>
-        <option value="">暴富矿区</option>
-        <option value="">地渊孢林</option>
-        <option value="">围攻帕拉勒斯</option>
-        <option value="">阿塔达萨</option>
-        <option value="">塞塔里斯神庙</option>
-        <option value="">风暴神殿</option>
-        <option value="">维克雷斯庄园</option>
-        <option value="">托尔达戈</option>
-    </select>
-    <select name="" id="level">
-        <option v-for="item in items" :value="[[item]]">
-            [[ item ]]
-        </option>
-    </select>
-    <button id = "confirm_key" type="submit" class="btn btn-success">确定</button>
 <!--<p>自由镇</p>-->
 <!--<p>诸王之眠</p>-->
 <!--<p>暴富矿区</p>-->
@@ -35,12 +68,13 @@
 <!--<p>风暴神殿</p>-->
 <!--<p>维克雷斯庄园</p>-->
 <!--<p>托尔达戈</p>-->
-    <table class="table" id = "key_table">
+    <table class="table table_width" id = "key_table">
         <thead>
             <tr>
                 <th>副本</th>
                 <th>等级</th>
                 <th>用户</th>
+                <th>职业</th>
             </tr>
         </thead>
         <tbody>
@@ -49,10 +83,12 @@
     </table>
 {% endautoescape %}
 </div>
+</div>
 
 {% endblock %}
 {% block js %}
 <script src='{{ url_for("static", filename="js/key-page.js") }}'></script>
+<script src='{{ url_for("static", filename="js/key-class.js") }}'></script>
 <script src='{{ url_for("static", filename="js/vm.js") }}'></script>
 <script src="static/js/signin.js" type="text/javascript"></script>
 {% endblock %}

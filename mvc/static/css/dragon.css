@@ -1,6 +1,62 @@
-select {
-    height: 30px;
+body{
+    background-color: #0b1319 !important;/*rgba(10, 19, 25, 0.5);*//*background: #0b1319;*//*#d1d7e1;*/
+    background:#0b1319 !important;
+    color: #ebdec2;
+    font-size: 14px;
+}
+.top{
+    /*color: #ebdec2;*/
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #ebdec2;
+}
+.key-form{
+    margin-top:50px;
+}
+
+select.metro-35 {
+    height: 38px;
     width: 120px;
+    line-height: 1.5em;
+    font-size: 1.224rem;
+    background-color: rgba(10, 19, 25,0.9);
+}
+select {
+    color: #ebdec2;
+    height: 25px;
+    width: 120px;
+    background-color: rgba(10, 19, 25,0.9);
+}
+/*input{*/
+    /*color:#ebdec2;*/
+    /*height: 25px;*/
+    /*background-color: rgba(10, 19, 25,0.4);*/
+/*}*/
+.key-input{
+    color: #ebdec2;
+    height: 38px;
+    width: 120px;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: rgba(10, 19, 25,0.6);
+}
+.search-input{
+    color: #ebdec2;
+    height: 28px;
+    width: 140px;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: rgba(10, 19, 25,0.4);
+}
+.confirm-btn{
+    /*display: inline-block;*/
+    margin-top: 40px;
+}
+.confirm-btn a {
+    min-width: 155px;
+}
+.confirm-btn .Button-inner{
+    padding: 12px 30px;
 }
 .center {
     text-align: center;
@@ -8,9 +64,14 @@ select {
 .right{
     text-align: right;
 }
-.margin-padding{
-    margin: 5px;
+.page_margin{
+    margin: 10px 30px 10px 30px;
 }
+#key_table_wrapper{
+    width: 50%;
+    margin: 80px auto 15px auto;
+}
+
 .inline{
     display: inline;
 }
@@ -21,4 +82,169 @@ select {
 }
 .block{
     display:block;
+}
+.top input[type=search] {
+    -webkit-appearance: textarea;
+}
+option[value=Hunter],select[value=Hunter]{
+    color: #ABD473;
+}
+option[value=Paladin], select[value=Paladin]{
+    color: #F58CBA;
+}
+option[value=Druid], select[value=Druid]{
+    color: #FF7D0A;
+}
+option[value=Warior], select[value=Warior]{
+    color: #C79C6E;
+}
+option[value=Mage], select[value=Mage]{
+    color: #69CCF0;
+}
+option[value=Priest], select[value=Priest]{
+    color: #e5e5e5;
+}
+option[value="Death Knight"], select[value="Death Knight"]{
+    color: #C41F3B;
+}
+option[value=Warlock], select[value=Warlock]{
+    color: #9482C9;
+}
+option[value=Rogue],select[value=Rogue] {
+    color: #FFF569;
+}
+option[value=Shaman], select[value=Shaman]{
+    color: #0070DE;
+}
+option[value=Monk], select[value=Monk]{
+    color: #00FF96;
+}
+option[value="Demon Hunter"], select[value="Demon Hunter"]{
+    color: #A330C9;
+}
+#character{
+    width: 160px;
+}
+table.dataTable tbody tr.odd {
+    background-color: rgba(0,0,0,.6) !important;
+}
+table.dataTable tbody tr.even {
+    background-color: rgba(0,0,0,0.4) !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #504137;
+}
+
+.GameIcon{position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;background-color:#000;display:inline-block;max-width:168px;width:48px;border:1px solid #504137}
+.GameIcon::before{content:"";display:block;padding-top:100%}
+.GameIcon-icon{position:absolute;top:0;right:0;bottom:0;left:0;background-color:#000;background-size:cover;border-radius:9%}
+.GameIcon--huge{width:64px}
+.GameIcon--large{width:56px}
+.GameIcon--medium{width:32px}
+.GameIcon--small{width:24px}
+.GameIcon--tiny{width:16px}
+.GameIcon--full{width:100%}
+.GameIcon--check{opacity:.6}
+.GameIcon--check::after{content:"";display:block;border:3px solid #fff;border-width:0 0 4px 4px;height:16px;width:32px;margin:6px 0;-webkit-transform:rotate(-45deg) scale(.5);transform:rotate(-45deg) scale(.5);position:absolute;top:8px;left:8px}
+.GameIcon[disabled]{opacity:.5}
+.GameIcon--slot{border:1px solid #333}
+.GameIcon--slot .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-slots.png);border-radius:0}
+.GameIcon--slotHead .GameIcon-icon{background-position:0 0}
+.GameIcon--slotNeck .GameIcon-icon{background-position:0 -100%}
+.GameIcon--slotShoulder .GameIcon-icon{background-position:0 -200%}
+.GameIcon--slotBack .GameIcon-icon{background-position:0 -300%}
+.GameIcon--slotChest .GameIcon-icon{background-position:0 -300%}
+.GameIcon--slotTabard .GameIcon-icon{background-position:0 -400%}
+.GameIcon--slotShirt .GameIcon-icon{background-position:0 -500%}
+.GameIcon--slotWrist .GameIcon-icon{background-position:0 -600%}
+.GameIcon--slotHand .GameIcon-icon{background-position:0 -700%}
+.GameIcon--slotWaist .GameIcon-icon{background-position:0 -800%}
+.GameIcon--slotLeg .GameIcon-icon{background-position:0 -900%}
+.GameIcon--slotFoot .GameIcon-icon{background-position:0 -1000%}
+.GameIcon--slotLeftFinger .GameIcon-icon{background-position:0 -1100%}
+.GameIcon--slotRightFinger .GameIcon-icon{background-position:0 -1100%}
+.GameIcon--slotLeftTrinket .GameIcon-icon{background-position:0 -1200%}
+.GameIcon--slotRightTrinket .GameIcon-icon{background-position:0 -1200%}
+.GameIcon--slotWeapon .GameIcon-icon{background-position:0 -1300%}
+.GameIcon--slotOffhand .GameIcon-icon{background-position:0 -1400%}
+.GameIcon--POOR{border-color:#9d9d9d}
+.GameIcon--COMMON{border-color:#fff}
+.GameIcon--UNCOMMON{border-color:#1eff00}
+.GameIcon--RARE{border-color:#0081ff}
+.GameIcon--EPIC{border-color:#c600ff}
+.GameIcon--LEGENDARY{border-color:#ff8000}
+.GameIcon--ARTIFACT{border-color:#e5cc80}
+.GameIcon--HEIRLOOM{border-color:#0cf}
+.GameIcon--AZERITE{border-color:#e5cc80}
+.GameIcon--AZERITE .GameIcon-level{border-color:#e5cc80}
+.GameIcon--WARRIOR .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-warrior.jpg)}
+.GameIcon--WARLOCK .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-warlock.jpg)}
+.GameIcon--SHAMAN .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-shaman.jpg)}
+.GameIcon--ROGUE .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-rogue.jpg)}
+.GameIcon--PRIEST .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-priest.jpg)}
+.GameIcon--PALADIN .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-paladin.jpg)}
+.GameIcon--MONK .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-monk.jpg)}
+.GameIcon--MAGE .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-mage.jpg)}
+.GameIcon--HUNTER .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-hunter.jpg)}
+.GameIcon--DRUID .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-druid.jpg)}
+.GameIcon--DEATHKNIGHT .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-death-knight.jpg)}
+.GameIcon--DEMONHUNTER .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-demon-hunter.jpg)}
+.GameIcon--vector{border:none;background-color:transparent}
+.GameIcon--vector .GameIcon-icon{border:none;background-color:transparent;border-radius:0}
+.GameIcon--vector.GameIcon--WARRIOR .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-warrior-vector.png)}
+.GameIcon--vector.GameIcon--WARLOCK .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-warlock-vector.png)}
+.GameIcon--vector.GameIcon--SHAMAN .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-shaman-vector.png)}
+.GameIcon--vector.GameIcon--ROGUE .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-rogue-vector.png)}
+.GameIcon--vector.GameIcon--PRIEST .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-priest-vector.png)}
+.GameIcon--vector.GameIcon--PALADIN .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-paladin-vector.png)}
+.GameIcon--vector.GameIcon--MONK .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-monk-vector.png)}
+.GameIcon--vector.GameIcon--MAGE .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-mage-vector.png)}
+.GameIcon--vector.GameIcon--HUNTER .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-hunter-vector.png)}
+.GameIcon--vector.GameIcon--DRUID .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-druid-vector.png)}
+.GameIcon--vector.GameIcon--DEATHKNIGHT .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-death-knight-vector.png)}
+.GameIcon--vector.GameIcon--DEMONHUNTER .GameIcon-icon{background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-class-demon-hunter-vector.png)}
+.GameIcon-transmog{display:none}
+.GameIcon-level{display:none}
+.GameIcon--transmog .GameIcon-transmog{position:absolute;left:-1px;bottom:-1px;height:24px;width:24px;display:block;background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-transmogCorner.png);background-size:contain}
+.GameIcon--transmog.GameIcon--transmogRight .GameIcon-transmog{right:-1px;bottom:-1px;background-image:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-transmogCornerRight.png)}
+.GameIcon--level .GameIcon-level{position:absolute;left:50%;bottom:-8px;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);display:block;background:#000;padding:1px 8px;border-width:1px;border-style:solid;font-size:.75rem;line-height:1.5em}
+@media (min-width:720px){.GameIcon--level .GameIcon-level{font-size:.85rem}
+}
+@media (min-width:1280px){.GameIcon--level .GameIcon-level{font-size:1rem}
+}
+.GameIcon--borderGrey{border:solid 1px #444}
+.GameIcon--azerite .GameIcon-borderImage{position:absolute;top:0;right:0;bottom:0;left:0;border-style:solid;border-width:0;border-image-source:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-azerite.png);border-image-repeat:initial;border-image-slice:48 fill;border-image-width:48px;border-image-outset:4px 11px 4px 11px}
+.GameIcon--azerite.GameIcon--huge{border-style:solid;border-width:0;border-image-source:url(https://www.wowchina.com/static/components/GameIcon/GameIcon-azerite.png);border-image-repeat:round;border-image-slice:64 fill;border-image-width:64px;border-image-outset:1px 8px}
+.GameIcon--hoverGoldLightBorder:hover{border-color:#f8b700}
+
+.Pane-bg {
+    background-position: top;
+    background-size: 150%;
+}
+.Pane-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.Pane-content {
+    padding: 0 20px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1600px;
+    z-index: 0;
+}
+.SiteNav-pageLink {
+    color: #f8b700;
+    /*font-size: 1rem;*/
+    line-height: 1.5em;
 }
