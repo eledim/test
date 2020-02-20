@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="采用json请求">
+      <change afterPath="$PROJECT_DIR$/mvc/static/images/QDU3RGYJLHQQ1474350268997.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/templates/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,28 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - wow_key@101.37.116.142" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wow_key@192.168.43.135" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wow_key@192.168.43.135" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wow_key@192.168.43.135" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wow_key: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wow_key@192.168.43.135" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wow_key: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="character: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -89,19 +110,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\source\wow_dungeons\mvc\static\images" />
+      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
+      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\js\lib" />
+      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\js" />
+      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\templates" />
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\images" />
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\image" />
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
-      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\js\lib" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\js" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app (1)">
@@ -205,7 +226,7 @@
       <option name="presentableId" value="Default" />
       <updated>1529475870107</updated>
       <workItem from="1582005274661" duration="14335000" />
-      <workItem from="1582171773970" duration="1371000" />
+      <workItem from="1582171773970" duration="8483000" />
     </task>
     <task id="LOCAL-00001" summary="采用json请求">
       <created>1582171913033</created>
@@ -214,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582171913033</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更改登录页面">
+      <created>1582173196758</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582173196758</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -251,7 +279,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="采用json请求" />
-    <option name="LAST_COMMIT_MESSAGE" value="采用json请求" />
+    <MESSAGE value="更改登录页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改登录页面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="531" y="164" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582172199524">
@@ -262,85 +291,80 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="417" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582015172687" />
-    <state x="562" y="116" key="CommitChangelistDialog2" timestamp="1582171911565">
+    <state x="562" y="116" key="CommitChangelistDialog2" timestamp="1582173196074">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="562" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582171911565" />
-    <state width="573" height="466" key="DebuggerActiveHint" timestamp="1582020110266">
+    <state x="562" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582173196074" />
+    <state width="1377" height="466" key="DebuggerActiveHint" timestamp="1582182075976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="573" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582020110266" />
+    <state width="1377" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582182075976" />
     <state x="1092" y="351" key="FileChooserDialogImpl" timestamp="1582010489934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1092" y="351" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582010489934" />
-    <state width="1876" height="250" key="GridCell.Tab.0.bottom" timestamp="1582172210166">
+    <state width="1876" height="250" key="GridCell.Tab.0.bottom" timestamp="1582186168325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582172210166" />
-    <state width="1876" height="250" key="GridCell.Tab.0.center" timestamp="1582172210166">
+    <state width="1876" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582186168325" />
+    <state width="1876" height="250" key="GridCell.Tab.0.center" timestamp="1582186168325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582172210166" />
-    <state width="1876" height="250" key="GridCell.Tab.0.left" timestamp="1582172210166">
+    <state width="1876" height="250" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582186168325" />
+    <state width="1876" height="250" key="GridCell.Tab.0.left" timestamp="1582186168325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582172210166" />
-    <state width="1876" height="250" key="GridCell.Tab.0.right" timestamp="1582172210166">
+    <state width="1876" height="250" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582186168325" />
+    <state width="1876" height="250" key="GridCell.Tab.0.right" timestamp="1582186168325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582172210166" />
-    <state width="1876" height="250" key="GridCell.Tab.1.bottom" timestamp="1582173146707">
+    <state width="1876" height="250" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582186168325" />
+    <state width="1876" height="250" key="GridCell.Tab.1.bottom" timestamp="1582185667025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582173146707" />
-    <state width="1876" height="250" key="GridCell.Tab.1.center" timestamp="1582173146707">
+    <state width="1876" height="250" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582185667025" />
+    <state width="1876" height="250" key="GridCell.Tab.1.center" timestamp="1582185667025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582173146707" />
-    <state width="1876" height="250" key="GridCell.Tab.1.left" timestamp="1582173146707">
+    <state width="1876" height="250" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582185667025" />
+    <state width="1876" height="250" key="GridCell.Tab.1.left" timestamp="1582185667025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582173146707" />
-    <state width="1876" height="250" key="GridCell.Tab.1.right" timestamp="1582173146707">
+    <state width="1876" height="250" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582185667025" />
+    <state width="1876" height="250" key="GridCell.Tab.1.right" timestamp="1582185667025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="250" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582173146707" />
+    <state width="1876" height="250" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582185667025" />
     <state x="333" y="188" key="SettingsEditor" timestamp="1582021621705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="333" y="188" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582021621705" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582171929777">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582186827262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582171929777" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582186827262" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>122</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>139</line>
+          <line>143</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>107</line>
+          <line>108</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>156</line>
+          <line>160</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>154</line>
+          <line>158</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -350,8 +374,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="26" />
+          <line>125</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvc/app.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -372,7 +401,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/wow_dungeons$util.coverage" NAME="util Coverage Results" MODIFIED="1582010873448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
-    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582172209996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
+    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582181262654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
     <SUITE FILE_PATH="coverage/wow_dungeons$app.coverage" NAME="app Coverage Results" MODIFIED="1582011526654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

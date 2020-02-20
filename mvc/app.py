@@ -105,6 +105,7 @@ def confirm_key():
     talent = 0
     user_values = exe_sql('select userid from user where username = %s', [username]);
 
+    # 检测用户是否存在
     if len(user_values) > 0:
         userid = user_values[0][0]
         character_values = exe_sql('select character_id from `character` where class = %s AND userid = %s',
@@ -114,24 +115,27 @@ def confirm_key():
             character_id = str(uuid.uuid1())
             exe_sql('insert into `character` (id, userid,character_id,class,talent) values (%s, %s,%s,%s,%s)',
                     [character_id, userid, character_id, character, talent])
-            ret = ret_ok_json("insert character")
+            ret_ok_json("insert character")
         else:
             character_id = character_values[0][0]
 
-        key_values = exe_sql('select userid from userkey where userid=%s and character_id=%s', [userid, character_id]);
-        # 已有key记录，更新
+        key_values = exe_sql('select level from userkey where userid=%s and character_id=%s and dungeon = %s',
+                             [userid, character_id, dungeon]);
+        # 已有key记录且等级小，更新
         if len(key_values) > 0:
-            exe_sql('update userkey set level = %s,dungeon = %s where userid = %s and character_id = %s',
-                    [level, dungeon, userid, character_id])
-            ret = ret_ok_json("update key")
+            ret_level = key_values[0][0]
+            if int(ret_level) < int(level):
+                exe_sql('update userkey set level = %s where userid = %s and character_id = %s and dungeon = %s',
+                        [level, userid, character_id, dungeon])
+                return ret_ok_json("update key")
+        # 无key记录，新增
         else:
             userkey_id = str(uuid.uuid1())
-            exe_sql('insert into userkey (id, level,dungeon,userid,character_id) values (%s, %s,%s,%s,%s)',
-                    [userkey_id, level, dungeon, userid, character_id])
-            ret = ret_ok_json("insert key")
-    else:
-        ret = ret_err_json("user qeury error")
-    return ret
+            exe_sql(
+                'insert into userkey (id, userkey_id,level,dungeon,userid,character_id) values (%s, %s,%s,%s,%s,%s)',
+                [userkey_id, userkey_id, level, dungeon, userid, character_id])
+            return ret_ok_json("insert key")
+    return ret_err_json("user qeury error")
 
 
 # 查询key
