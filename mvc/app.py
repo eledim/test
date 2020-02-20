@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, render_template, session
+from flask import Flask, request, render_template, session, Response
 import uuid
 import json
 import os
@@ -36,35 +36,26 @@ def signin2():
 
 @app.route('/key_page', methods=['GET'])
 def key_page():
-    username = request.args.get('username')
-    return render_template('key_page.html', username=username)
+    # username = request.args.get('username')
+    if request.cookies.get('username') ==  session.get('username')  :
+        return render_template('key_page.html', username=request.cookies.get('username'))
+    else :
+        return render_template('signin.html')
 
 # 以下为post请求
-# 登录
-@app.route('/do_signin', methods=['POST'])
-def signin():
-    session.permanent = True  # 默认session的时间持续31天
-    a = request.get_data()
-    dict1 = json.loads(a)
-    username = dict1["username"]
-    password = dict1["password"]
+@app.route('/test', methods=['POST'])
+def test():
     # username = request.form['username']
     # password = request.form['password']
-    session[username] = username
-    session.get(username)
-    values = exe_sql('select password from user where username=%s', [username])
-    if len(values) == 0:
-        id = str(uuid.uuid1());
-        userid = str(uuid.uuid1());
-        exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
-                [id, userid, username, password])
-        ret = ret_ok_json("add user success")
-    else:
-        if password == values[0][0]:
-            ret = ret_ok_json(session.get(username))
-        else:
-            ret = ret_err_json("password error")
-    return ret
+    cookie = request.cookies
+    username2 = cookie.get("username")
+    password2 = cookie.get("password")
+
+
+    resp = Response("服务器返回信息")
+    #设置cookie，
+    resp.set_cookie('username','derek')
+    resp.delete_cookie('username')
 
 
 # 旧登录
@@ -74,6 +65,47 @@ def signin2():
     if username == 'admin' and password == 'password':
         return render_template('signin-ok.html', username=username)
     return render_template('home.html', message='Bad username or password', username=username)
+
+
+# 登录
+@app.route('/do_signin', methods=['POST'])
+def signin():
+    session.permanent = True  # 默认session的时间持续31天
+    a = request.get_data()
+    dict1 = json.loads(a)
+    username = dict1["username"]
+    password = dict1["password"]
+    if session.get('username') == username and session.get('password') == password:
+        ret = ret_ok_json("")
+        addCookie(ret,username,password)
+        return ret
+    values = exe_sql('select password from user where username=%s', [username])
+    if len(values) == 0:
+        id = str(uuid.uuid1());
+        userid = str(uuid.uuid1());
+        exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
+                [id, userid, username, password])
+        ret = ret_ok_json("add user success")
+        addCookie(ret, username, password)
+        addSession(username,password)
+    else:
+        if password == values[0][0]:
+            ret = ret_ok_json(session.get('username'))
+            addCookie(ret, username, password)
+            addSession(username,password)
+        else:
+            ret = ret_err_json("password error")
+    return ret
+
+def addCookie(ret,username,password):
+    #设置cookie
+    ret.set_cookie('username',username)
+    ret.set_cookie('password', password)
+
+
+def addSession(username,password):
+    session['username'] = username
+    session['password'] = password
 
 
 # 提交key
@@ -102,6 +134,7 @@ def confirm_key():
     # dungeon = request.form['dungeon']
     # username = request.form['username']
     # character = request.form['character']
+    susername = session.get('username')
     talent = 0
     user_values = exe_sql('select userid from user where username = %s', [username]);
 

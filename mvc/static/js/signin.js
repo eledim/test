@@ -1,12 +1,14 @@
-var setCookieAndReLoc = function (ajax_data, params) {
+//添加cookie并跳转主页
+var setCookieAndRedirectToHome = function (ajax_data, params) {
     if (ajax_data.stat == "ok") {
-        if (params.username != $.cookie('username')) {
-            $.cookie('username', params.username, {expires: 30});
-            $.cookie('password', params.password, {expires: 30});
-        }
+        //逻辑移到后端
+        // if (params.username != $.cookie('username')) {
+        //     $.cookie('username', params.username, {expires: 30});
+        //     $.cookie('password', params.password, {expires: 30});
+        // }
         $('form').fadeOut(500);
         $('.wrapper').addClass('form-success');
-        $(location).attr('href', site + "key_page?username=" + params.username);
+        $(location).attr('href', site + "key_page");/*?username=" + params.username);*/
         console.log("signin success");
     } else {
         //$(location).attr('href', site + "signin");
@@ -16,14 +18,9 @@ var setCookieAndReLoc = function (ajax_data, params) {
     }
     //$(document.body).html(data);
 };
+// 登录
 $('#login-button').click(function (event) {
     event.preventDefault();
-    ajax_singin($("input[name=username]").val(), $("input[name=password]").val(), setCookieAndReLoc);
+    ajax_singin($("input[name=username]").val(), $("input[name=password]").val(), setCookieAndRedirectToHome);
 });
-var ajax_singin = function (username, password, fnSuccess, fnError) {
-    var params = {
-        username: username,
-        password: password,
-    };
-    ajax(params, "do_signin", fnSuccess, fnError);
-};
+

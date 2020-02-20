@@ -21,3 +21,23 @@ var ajax = function (params, url, fnSuccess, fnError) {
         }
     });
 };
+var ajax_singin = function (username, password, fnSuccess, fnError) {
+    var params = {
+        username: username,
+        password: password,
+    };
+    ajax(params, "do_signin", fnSuccess, fnError);
+};
+var ajax_confirm_key = function (fnSuccess, fnError) {
+    var data = {
+        dungeon: $("#dungeon").find("option:selected").text(),
+        level: $("#level").val(),
+        username: $.cookie('username'),
+        character: $("#character").find("option:selected").text(),
+    };
+    ajax(data, "confirm_key", fnSuccess, fnError);
+};
+
+var ajax_query_key = function (fnSuccess, fnError) {
+    ajax(null, "query_key", fnSuccess, fnError);
+};
