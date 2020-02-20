@@ -15,5 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="MySQL - wow_key@101.37.116.142" uuid="6b6bd910-20f9-4dd4-87ce-68ec7be0b727">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://101.37.116.142:3306/wow_key</jdbc-url>
+    </data-source>
   </component>
 </project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="wow_key@192.168.43.135">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.9">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
     <root id="1">
       <ServerVersion>5.7.23</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -21,7 +21,6 @@
     </schema>
     <schema id="6" parent="1" name="wow_key">
       <Current>1</Current>
-      <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
     </schema>
     <collation id="7" parent="1" name="armscii8_bin">
