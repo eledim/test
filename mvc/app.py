@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, render_template, session, Response
+from flask import Flask, request, render_template, session, Response, redirect, url_for
 import uuid
 import json
 import os
@@ -17,6 +17,27 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的
 
 # site = 'http://eledim.xyz/'
 # site = 'http://127.0.0.1:5000/'
+
+# 拦截器
+# 没有session，则返回登录
+@app.before_request
+def before_action():
+    print(request.path)
+    allow_suffix = ['.ico', '.jpg', '.css', '.ttf', '.html', '.js', '.png'];
+    for i in allow_suffix:
+        if request.path.find(i) != -1:
+            return
+
+    if not request.path == '/signin' and not request.path == '/' and request.method == 'GET':
+        if not 'username' in session:
+            session['newurl'] = request.path
+            return redirect('/signin')
+            # return redirect(url_for('home'))
+
+# @app.after_request
+# def after_request_action(res):
+#     return  res
+
 
 # 以下为get请求，返回网页
 @app.route('/', methods=['GET', 'POST'])
@@ -37,7 +58,9 @@ def signin2():
 @app.route('/key_page', methods=['GET'])
 def key_page():
     # username = request.args.get('username')
-    if request.cookies.get('username') ==  session.get('username')  :
+    if request.cookies.get('username') ==  session.get('username') \
+            and request.cookies.get('password') == session.get('password')\
+            and session.get('username') != None:
         return render_template('key_page.html', username=request.cookies.get('username'))
     else :
         return render_template('signin.html')
@@ -50,21 +73,10 @@ def test():
     cookie = request.cookies
     username2 = cookie.get("username")
     password2 = cookie.get("password")
-
-
     resp = Response("服务器返回信息")
     #设置cookie，
     resp.set_cookie('username','derek')
     resp.delete_cookie('username')
-
-
-# 旧登录
-def signin2():
-    username = request.form['username']
-    password = request.form['password']
-    if username == 'admin' and password == 'password':
-        return render_template('signin-ok.html', username=username)
-    return render_template('home.html', message='Bad username or password', username=username)
 
 
 # 登录
@@ -77,7 +89,7 @@ def signin():
     password = dict1["password"]
     if session.get('username') == username and session.get('password') == password:
         ret = ret_ok_json("")
-        addCookie(ret,username,password)
+        add_cookie(ret, username, password)
         return ret
     values = exe_sql('select password from user where username=%s', [username])
     if len(values) == 0:
@@ -86,24 +98,35 @@ def signin():
         exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
                 [id, userid, username, password])
         ret = ret_ok_json("add user success")
-        addCookie(ret, username, password)
-        addSession(username,password)
+        add_cookie(ret, username, password)
+        add_session(username, password)
     else:
         if password == values[0][0]:
             ret = ret_ok_json(session.get('username'))
-            addCookie(ret, username, password)
-            addSession(username,password)
+            add_cookie(ret, username, password)
+            add_session(username, password)
         else:
             ret = ret_err_json("password error")
     return ret
 
-def addCookie(ret,username,password):
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.clear()
+    # session.pop('password');
+    resp = ret_ok_json("logout")
+    resp.delete_cookie('username')
+    resp.delete_cookie('password')
+    return resp
+
+
+def add_cookie(ret, username, password):
     #设置cookie
     ret.set_cookie('username',username)
     ret.set_cookie('password', password)
 
 
-def addSession(username,password):
+def add_session(username, password):
     session['username'] = username
     session['password'] = password
 
@@ -134,40 +157,39 @@ def confirm_key():
     # dungeon = request.form['dungeon']
     # username = request.form['username']
     # character = request.form['character']
-    susername = session.get('username')
     talent = 0
     user_values = exe_sql('select userid from user where username = %s', [username]);
-
     # 检测用户是否存在
-    if len(user_values) > 0:
-        userid = user_values[0][0]
-        character_values = exe_sql('select character_id from `character` where class = %s AND userid = %s',
-                                   [character, userid]);
-        # 无该角色记录，添加
-        if len(character_values) == 0:
-            character_id = str(uuid.uuid1())
-            exe_sql('insert into `character` (id, userid,character_id,class,talent) values (%s, %s,%s,%s,%s)',
-                    [character_id, userid, character_id, character, talent])
-            ret_ok_json("insert character")
-        else:
-            character_id = character_values[0][0]
+    if len(user_values) == 0:
+        return ret_err_json("user qeury error")
+    userid = user_values[0][0]
+    character_values = exe_sql('select character_id from `character` where class = %s AND userid = %s',
+                               [character, userid]);
+    # 无该角色记录，添加
+    if len(character_values) == 0:
+        character_id = str(uuid.uuid1())
+        exe_sql('insert into `character` (id, userid,character_id,class,talent) values (%s, %s,%s,%s,%s)',
+                [character_id, userid, character_id, character, talent])
+        ret_ok_json("insert character")
+    else:
+        character_id = character_values[0][0]
 
-        key_values = exe_sql('select level from userkey where userid=%s and character_id=%s and dungeon = %s',
-                             [userid, character_id, dungeon]);
-        # 已有key记录且等级小，更新
-        if len(key_values) > 0:
-            ret_level = key_values[0][0]
-            if int(ret_level) < int(level):
-                exe_sql('update userkey set level = %s where userid = %s and character_id = %s and dungeon = %s',
-                        [level, userid, character_id, dungeon])
-                return ret_ok_json("update key")
-        # 无key记录，新增
-        else:
-            userkey_id = str(uuid.uuid1())
-            exe_sql(
-                'insert into userkey (id, userkey_id,level,dungeon,userid,character_id) values (%s, %s,%s,%s,%s,%s)',
-                [userkey_id, userkey_id, level, dungeon, userid, character_id])
-            return ret_ok_json("insert key")
+    key_values = exe_sql('select level from userkey where userid=%s and character_id=%s and dungeon = %s',
+                         [userid, character_id, dungeon]);
+    # 已有key记录且等级小，更新
+    if len(key_values) > 0:
+        ret_level = key_values[0][0]
+        if int(ret_level) < int(level):
+            exe_sql('update userkey set level = %s where userid = %s and character_id = %s and dungeon = %s',
+                    [level, userid, character_id, dungeon])
+            return ret_ok_json("update key")
+    # 无key记录，新增
+    else:
+        userkey_id = str(uuid.uuid1())
+        exe_sql(
+            'insert into userkey (id, userkey_id,level,dungeon,userid,character_id) values (%s, %s,%s,%s,%s,%s)',
+            [userkey_id, userkey_id, level, dungeon, userid, character_id])
+        return ret_ok_json("insert key")
     return ret_err_json("user qeury error")
 
 
@@ -192,6 +214,16 @@ def query_key():
     values = exe_sql(sql2)
     json_str = json.dumps(values, ensure_ascii=False)
     return jsonify(values)
+
+
+
+# 旧登录
+def signin2():
+    username = request.form['username']
+    password = request.form['password']
+    if username == 'admin' and password == 'password':
+        return render_template('signin-ok.html', username=username)
+    return render_template('home.html', message='Bad username or password', username=username)
 
 
 if __name__ == '__main__':

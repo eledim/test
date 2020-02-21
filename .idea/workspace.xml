@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="解决一角色只能添加一个key（改为各地城添加一个）">
+    <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="添加拦截器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/properties.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/static/js/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/constant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/static/js/key-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/key-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/static/js/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/signin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,9 +128,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.app (1)">
-    <configuration name="base.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/mvc/templates/base.html">
-      <method v="2" />
-    </configuration>
     <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/mvc/templates/test.html">
       <method v="2" />
     </configuration>
@@ -179,6 +175,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="properties" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mvc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvc/properties.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="util" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,19 +220,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.base.html" />
       <item itemvalue="JavaScript Debug.test.html" />
       <item itemvalue="Python.app (1)" />
       <item itemvalue="Python.util" />
       <item itemvalue="Python.app" />
+      <item itemvalue="Python.properties" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.properties" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.util" />
         <item itemvalue="JavaScript Debug.test.html" />
-        <item itemvalue="JavaScript Debug.base.html" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +247,8 @@
       <option name="presentableId" value="Default" />
       <updated>1529475870107</updated>
       <workItem from="1582005274661" duration="14335000" />
-      <workItem from="1582171773970" duration="17774000" />
+      <workItem from="1582171773970" duration="17858000" />
+      <workItem from="1582253840984" duration="9583000" />
     </task>
     <task id="LOCAL-00001" summary="采用json请求">
       <created>1582171913033</created>
@@ -252,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582186971952</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="改为服务端cookie和session">
+      <created>1582198990718</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582198990718</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -291,7 +317,8 @@
     <MESSAGE value="采用json请求" />
     <MESSAGE value="更改登录页面" />
     <MESSAGE value="解决一角色只能添加一个key（改为各地城添加一个）" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决一角色只能添加一个key（改为各地城添加一个）" />
+    <MESSAGE value="改为服务端cookie和session" />
+    <option name="LAST_COMMIT_MESSAGE" value="改为服务端cookie和session" />
   </component>
   <component name="WindowStateProjectService">
     <state x="531" y="164" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582172199524">
@@ -302,14 +329,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="417" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582015172687" />
-    <state x="853" y="326" key="#xdebugger.evaluate" timestamp="1582198772008">
+    <state x="853" y="326" key="#xdebugger.evaluate" timestamp="1582266826767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="853" y="326" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582198772008" />
-    <state x="57" y="118" width="1230" height="828" key="CommitChangelistDialog2" timestamp="1582198951731">
+    <state x="853" y="326" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582266826767" />
+    <state x="383" y="147" width="1230" height="828" key="CommitChangelistDialog2" timestamp="1582269544029">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="57" y="118" width="1230" height="828" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582198951731" />
+    <state x="383" y="147" width="1230" height="828" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582269544029" />
     <state width="1377" height="466" key="DebuggerActiveHint" timestamp="1582198103357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -318,46 +345,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1092" y="351" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582010489934" />
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom" timestamp="1582198040685">
+    <state width="1876" height="233" key="GridCell.Tab.0.bottom" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582198040685" />
-    <state width="1876" height="233" key="GridCell.Tab.0.center" timestamp="1582198040685">
+    <state width="1876" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.0.center" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582198040685" />
-    <state width="1876" height="233" key="GridCell.Tab.0.left" timestamp="1582198040684">
+    <state width="1876" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.0.left" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582198040684" />
-    <state width="1876" height="233" key="GridCell.Tab.0.right" timestamp="1582198040685">
+    <state width="1876" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.0.right" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582198040685" />
-    <state width="1876" height="233" key="GridCell.Tab.1.bottom" timestamp="1582196492794">
+    <state width="1876" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.1.bottom" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582196492794" />
-    <state width="1876" height="233" key="GridCell.Tab.1.center" timestamp="1582196492793">
+    <state width="1876" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.1.center" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582196492793" />
-    <state width="1876" height="233" key="GridCell.Tab.1.left" timestamp="1582196492793">
+    <state width="1876" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.1.left" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582196492793" />
-    <state width="1876" height="233" key="GridCell.Tab.1.right" timestamp="1582196492793">
+    <state width="1876" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.1.right" timestamp="1582269069304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582196492793" />
+    <state width="1876" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
     <state x="333" y="188" key="SettingsEditor" timestamp="1582021621705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="333" y="188" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582021621705" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582186986539">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582198998936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582186986539" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582198998936" />
     <state x="647" y="152" width="626" height="735" key="find.popup" timestamp="1582189524210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,33 +395,34 @@
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>176</line>
+          <line>198</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>141</line>
+          <line>162</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>72</line>
+          <line>84</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>158</line>
-          <option name="timeStamp" value="27" />
+          <line>44</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>165</line>
-          <option name="timeStamp" value="28" />
+          <line>31</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="31" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/mvc/static/js/key-page.js</url>
+          <line>83</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -414,8 +442,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/wow_dungeons$properties.coverage" NAME="properties Coverage Results" MODIFIED="1582256486480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
     <SUITE FILE_PATH="coverage/wow_dungeons$util.coverage" NAME="util Coverage Results" MODIFIED="1582010873448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
-    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582195442816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
+    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582267653408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
     <SUITE FILE_PATH="coverage/wow_dungeons$app.coverage" NAME="app Coverage Results" MODIFIED="1582011526654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -15,6 +15,7 @@ $(function () {
         ],
         dom: '<"top"lf>rt<"bottom"ip><"clear">',
     });
+
     /**
      * 返回表格行数组
      * @param data
@@ -36,6 +37,7 @@ $(function () {
         keyTable.clear();
         keyTable.rows.add(rows).draw();
     };
+
     /**
      * 回调，校验cookie用户密码
      * 逻辑移到后端
@@ -49,6 +51,7 @@ $(function () {
     //     }
     //     //$(document.body).html(data);
     // };
+
     /**
      * 重定向到登录页面
      */
@@ -61,6 +64,7 @@ $(function () {
      * 逻辑移到后端
      */
     // ajax_singin($.cookie('username'), $.cookie('password'), checkCookie, redirectToSignin);
+
     /**
      * 回调，更新表格
      */
@@ -68,8 +72,6 @@ $(function () {
         $(".dataTables_filter input").addClass("form-control search-input");
         ajax_query_key(updateTable);
     };
-
-    query_key();
 
     //添加key后，回调查询key方法
     $("#confirm_key").on("click", function () {
@@ -79,10 +81,12 @@ $(function () {
     //注销
     $("#logout").on("click", function (event) {
         event.preventDefault();
+        ajax_logout();
         redirectToSignin();
-        $.cookie('username', null);
-        $.cookie('password', null);
+        // $.cookie('username', null);
+        // $.cookie('password', null);
     });
 
-
+    //页面载入后执行
+    query_key();
 })

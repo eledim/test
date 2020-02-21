@@ -37,7 +37,9 @@ var ajax_confirm_key = function (fnSuccess, fnError) {
     };
     ajax(data, "confirm_key", fnSuccess, fnError);
 };
-
+var ajax_logout = function () {
+    ajax(null, "logout");
+};
 var ajax_query_key = function (fnSuccess, fnError) {
     ajax(null, "query_key", fnSuccess, fnError);
 };
