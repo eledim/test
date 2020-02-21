@@ -1,5 +1,7 @@
 // var  site = 'http://eledim.xyz/';
-var site = 'http://127.0.0.1:5000/'
+// var site = 'http://127.0.0.1:5000/'
+// var site = 'http://101.37.116.142:191/'
+var site = window.location.protocol + "//" + window.location.host + '/';
 //var  site = 'http://192.168.43.135/'
 var ajax = function (params, url, fnSuccess, fnError) {
     $.ajax({

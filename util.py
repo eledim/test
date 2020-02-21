@@ -10,7 +10,7 @@
 """
 import mysql.connector
 from flask import jsonify
-from mvc.properties import *
+from properties import *
 
 def main():
     pass

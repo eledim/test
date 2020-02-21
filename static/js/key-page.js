@@ -75,7 +75,10 @@ $(function () {
 
     //添加key后，回调查询key方法
     $("#confirm_key").on("click", function () {
-        ajax_confirm_key(query_key);
+        ajax_confirm_key(function (data) {
+            if(data.stat == "ok")
+                query_key();
+        });
     });
 
     //注销

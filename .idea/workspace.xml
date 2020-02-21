@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="添加拦截器">
+    <list default="true" id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="解决js获取汉字cookie导致-不能后台获取用户名问题，&#10;调整项目结构以方便部署，&#10;更改js site为动态参数以方便切换环境，&#10;解决gunicorn每次请求session不一致问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/static/js/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/constant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/static/js/key-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/static/js/key-page.js" afterDir="false" />
+    </list>
+    <list id="8a2f35e2-fd81-4ed7-9c26-34125918ef07" name="解决js获取汉字cookie导致-不能后台获取用户名问题， 调整项目结构以方便部署， 更改js site为动态参数以方便切换环境， 解决gunicorn每次请求session不一致问题" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/myapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/fisher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/dragon.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/dragon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/jquery.dataTables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/test-jquery.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test-jquery.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/css/wow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/wow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/font/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/font/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/QDU3RGYJLHQQ1474350268997.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/QDU3RGYJLHQQ1474350268997.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/sort_asc.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/sort_asc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/sort_asc_disabled.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/sort_asc_disabled.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/sort_both.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/sort_both.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/sort_desc.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/sort_desc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/images/sort_desc_disabled.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/sort_desc_disabled.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/key-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/key-class.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/key-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/key-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/lib/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/lib/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/jquery.dataTables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/lib/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/lib/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/lib/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/static/js/vm.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/key_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/key_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tesWSGI.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/tesWSGI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testList.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/testList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testMysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/testMysql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +116,22 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="eledim" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/mvc/app.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -91,9 +140,71 @@
       </set>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="10" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="5" end1="9" start2="11" end2="53" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="74" end1="75" start2="118" end2="118" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="76" end1="76" start2="119" end2="120" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="80" end1="81" start2="124" end2="129" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="82" end1="82" start2="130" end2="131" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="84" end1="85" start2="133" end2="134" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="92" end1="92" start2="141" end2="199" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="96" end1="96" start2="203" end2="205" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="104" end1="104" start2="213" end2="214" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="114" end1="121" start2="224" end2="224" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="127" end1="127" start2="230" end2="237" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="130" end1="133" start2="240" end2="240" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="146" end1="147" start2="253" end2="254" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="155" end1="156" start2="262" end2="263" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="168" end1="169" start2="275" end2="276" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="190" end1="191" start2="297" end2="298" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="212" end1="213" start2="319" end2="320" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="221" end1="221" start2="328" end2="344" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="222" end1="223" start2="345" end2="345" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="225" end1="226" start2="347" end2="347" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="227" end1="227" start2="348" end2="350" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="231" end1="231" start2="354" end2="355" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="232" end1="233" start2="356" end2="357" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="234" end1="235" start2="358" end2="358" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="244" end1="244" start2="367" end2="368" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="250" end1="251" start2="374" end2="375" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="280" end1="281" start2="404" end2="419" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="283" end1="312" start2="421" end2="421" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="314" end1="314" start2="423" end2="459" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="320" end1="321" start2="465" end2="468" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="331" end1="332" start2="478" end2="479" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="334" end1="336" start2="481" end2="483" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="338" end1="339" start2="485" end2="486" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="343" end1="343" start2="490" end2="494" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="347" end1="348" start2="498" end2="499" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="350" end1="352" start2="501" end2="503" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="354" end1="356" start2="505" end2="507" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="358" end1="360" start2="509" end2="511" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="362" end1="364" start2="513" end2="515" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="366" end1="368" start2="517" end2="519" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="370" end1="372" start2="521" end2="523" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="374" end1="376" start2="525" end2="527" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="378" end1="379" start2="529" end2="530" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="383" end1="384" start2="534" end2="539" changelist="6f2db563-a916-4286-b5ea-dad2f256b8a5" />
+        <range start1="386" end1="387" start2="541" end2="542" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="396" end1="398" start2="551" end2="553" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="401" end1="403" start2="556" end2="558" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="406" end1="408" start2="561" end2="563" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="411" end1="413" start2="566" end2="568" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="416" end1="417" start2="571" end2="572" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="420" end1="420" start2="575" end2="590" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="421" end1="422" start2="591" end2="592" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+        <range start1="446" end1="447" start2="616" end2="618" changelist="8a2f35e2-fd81-4ed7-9c26-34125918ef07" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1Xy50S3cWVV4Ftu2TAuLrJ2kZ6d" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -102,6 +213,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -112,13 +224,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\source\wow_dungeons\mvc\static\images" />
-      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
-      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\js\lib" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\js" />
-      <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\templates" />
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
@@ -126,11 +231,15 @@
       <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\image" />
       <recent name="C:\Users\Administrator\PycharmProjects\test\mvc\static\css" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\source\wow_dungeons\test" />
+      <recent name="C:\source\wow_dungeons" />
+      <recent name="C:\source\wow_dungeons\mvc\static\images" />
+      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\css" />
+      <recent name="C:\Users\CQ\Documents\GitHub\test\mvc\static\js\lib" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.app (1)">
-    <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/test/mvc/templates/test.html">
-      <method v="2" />
-    </configuration>
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,7 +253,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvc/app.py" />
+      <option name="SCRIPT_NAME" value="C:\source\wow_dungeons\app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +262,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -166,7 +275,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="SCRIPT_NAME" value="C:\source\wow_dungeons\test\app2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,7 +297,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvc/properties.py" />
+      <option name="SCRIPT_NAME" value="C:\source\wow_dungeons\properties.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -210,7 +319,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvc/util.py" />
+      <option name="SCRIPT_NAME" value="C:\source\wow_dungeons\util.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,20 +328,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in app.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/app.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.test.html" />
       <item itemvalue="Python.app (1)" />
       <item itemvalue="Python.util" />
-      <item itemvalue="Python.app" />
       <item itemvalue="Python.properties" />
+      <item itemvalue="Python.app2" />
+      <item itemvalue="Python tests.pytest in app.py" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python tests.pytest in app.py" />
         <item itemvalue="Python.properties" />
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.app2" />
         <item itemvalue="Python.util" />
-        <item itemvalue="JavaScript Debug.test.html" />
       </list>
     </recent_temporary>
   </component>
@@ -242,13 +367,14 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6f2db563-a916-4286-b5ea-dad2f256b8a5" name="Default" comment="" />
+      <changelist id="8a2f35e2-fd81-4ed7-9c26-34125918ef07" name="解决js获取汉字cookie导致-不能后台获取用户名问题， 调整项目结构以方便部署， 更改js site为动态参数以方便切换环境， 解决gunicorn每次请求session不一致问题" comment="" />
       <created>1529475870107</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529475870107</updated>
       <workItem from="1582005274661" duration="14335000" />
       <workItem from="1582171773970" duration="17858000" />
-      <workItem from="1582253840984" duration="9583000" />
+      <workItem from="1582253840984" duration="23463000" />
     </task>
     <task id="LOCAL-00001" summary="采用json请求">
       <created>1582171913033</created>
@@ -278,47 +404,70 @@
       <option name="project" value="LOCAL" />
       <updated>1582198990718</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加拦截器">
+      <created>1582270268186</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582270268186</updated>
+    </task>
+    <task id="LOCAL-00006" summary="解决js获取汉字cookie导致-不能后台获取用户名问题，&#10;调整项目结构以方便部署，&#10;更改js site为动态参数以方便切换环境，&#10;解决gunicorn每次请求session不一致问题">
+      <created>1582285131757</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582285131757</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="py_test_in_testList_py - 2018.11.10 at 11h 46m 07s.xml">
-      <configuration name="py.test in testList.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_testList_test_var_args - 2018.11.10 at 11h 46m 26s.xml">
-      <configuration name="py.test for testList.test_var_args" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_testList_py - 2018.11.10 at 11h 46m 40s.xml">
-      <configuration name="py.test in testList.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_testList_test_var_args - 2018.11.10 at 11h 47m 53s.xml">
-      <configuration name="py.test for testList.test_var_args" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_testList_test_var_args - 2018.11.10 at 11h 50m 48s.xml">
-      <configuration name="py.test for testList.test_var_args" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_testList_test_var_args - 2018.11.10 at 11h 51m 37s.xml">
-      <configuration name="py.test for testList.test_var_args" configurationId="tests" />
-    </history-entry>
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="采用json请求" />
     <MESSAGE value="更改登录页面" />
     <MESSAGE value="解决一角色只能添加一个key（改为各地城添加一个）" />
     <MESSAGE value="改为服务端cookie和session" />
-    <option name="LAST_COMMIT_MESSAGE" value="改为服务端cookie和session" />
+    <MESSAGE value="添加拦截器" />
+    <MESSAGE value="解决js获取汉字cookie导致-不能后台获取用户名问题，&#10;调整项目结构以方便部署，&#10;更改js site为动态参数以方便切换环境，&#10;解决gunicorn每次请求session不一致问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决js获取汉字cookie导致-不能后台获取用户名问题，&#10;调整项目结构以方便部署，&#10;更改js site为动态参数以方便切换环境，&#10;解决gunicorn每次请求session不一致问题" />
   </component>
   <component name="WindowStateProjectService">
     <state x="531" y="164" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582172199524">
@@ -329,62 +478,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="417" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582015172687" />
-    <state x="853" y="326" key="#xdebugger.evaluate" timestamp="1582266826767">
+    <state x="853" y="326" key="#xdebugger.evaluate" timestamp="1582283950087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="853" y="326" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582266826767" />
-    <state x="383" y="147" width="1230" height="828" key="CommitChangelistDialog2" timestamp="1582269544029">
+    <state x="853" y="326" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582283950087" />
+    <state x="384" y="129" width="1230" height="828" key="CommitChangelistDialog2" timestamp="1582285294946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="383" y="147" width="1230" height="828" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582269544029" />
+    <state x="384" y="129" width="1230" height="828" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582285294946" />
     <state width="1377" height="466" key="DebuggerActiveHint" timestamp="1582198103357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1377" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582198103357" />
+    <state x="261" y="108" key="DiffContextDialog" timestamp="1582285108613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="261" y="108" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582285108613" />
     <state x="1092" y="351" key="FileChooserDialogImpl" timestamp="1582010489934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1092" y="351" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582010489934" />
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom" timestamp="1582269069304">
+    <state width="1876" height="382" key="GridCell.Tab.0.bottom" timestamp="1582285333630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.0.center" timestamp="1582269069304">
+    <state width="1876" height="382" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333630" />
+    <state width="1876" height="382" key="GridCell.Tab.0.center" timestamp="1582285333630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.0.left" timestamp="1582269069304">
+    <state width="1876" height="382" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333630" />
+    <state width="1876" height="382" key="GridCell.Tab.0.left" timestamp="1582285333630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.0.right" timestamp="1582269069304">
+    <state width="1876" height="382" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333630" />
+    <state width="1876" height="382" key="GridCell.Tab.0.right" timestamp="1582285333630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.1.bottom" timestamp="1582269069304">
+    <state width="1876" height="382" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333630" />
+    <state width="1876" height="233" key="GridCell.Tab.1.bottom" timestamp="1582285333628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.1.center" timestamp="1582269069304">
+    <state width="1876" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333628" />
+    <state width="1876" height="233" key="GridCell.Tab.1.center" timestamp="1582285333628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.1.left" timestamp="1582269069304">
+    <state width="1876" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333628" />
+    <state width="1876" height="233" key="GridCell.Tab.1.left" timestamp="1582285333627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
-    <state width="1876" height="233" key="GridCell.Tab.1.right" timestamp="1582269069304">
+    <state width="1876" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333627" />
+    <state width="1876" height="233" key="GridCell.Tab.1.right" timestamp="1582285333628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582269069304" />
+    <state width="1876" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582285333628" />
     <state x="333" y="188" key="SettingsEditor" timestamp="1582021621705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="333" y="188" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582021621705" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582198998936">
+    <state x="806" y="440" key="VCS.ChangelistChooser" timestamp="1582285163102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582198998936" />
+    <state x="806" y="440" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582285163102" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1582270476371">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582270476371" />
     <state x="647" y="152" width="626" height="735" key="find.popup" timestamp="1582189524210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -394,32 +551,47 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>198</line>
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>203</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>162</line>
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>167</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>84</line>
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>86</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>45</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvc/app.py</url>
+          <url>file://$PROJECT_DIR$/app.py</url>
           <line>31</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/mvc/static/js/key-page.js</url>
+          <url>file://$PROJECT_DIR$/static/js/key-page.js</url>
           <line>83</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="32" />
@@ -444,7 +616,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/wow_dungeons$properties.coverage" NAME="properties Coverage Results" MODIFIED="1582256486480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
     <SUITE FILE_PATH="coverage/wow_dungeons$util.coverage" NAME="util Coverage Results" MODIFIED="1582010873448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
-    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582267653408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
+    <SUITE FILE_PATH="coverage/wow_dungeons$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1582282288645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvc" />
+    <SUITE FILE_PATH="coverage/wow_dungeons$pytest_in_app_py.coverage" NAME="pytest in app.py Coverage Results" MODIFIED="1582282038684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/wow_dungeons$app.coverage" NAME="app Coverage Results" MODIFIED="1582011526654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
