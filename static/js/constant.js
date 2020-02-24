@@ -23,6 +23,7 @@ var ajax = function (params, url, fnSuccess, fnError) {
         }
     });
 };
+
 var ajax_singin = function (username, password, fnSuccess, fnError) {
     var params = {
         username: username,
@@ -30,6 +31,7 @@ var ajax_singin = function (username, password, fnSuccess, fnError) {
     };
     ajax(params, "do_signin", fnSuccess, fnError);
 };
+
 var ajax_confirm_key = function (fnSuccess, fnError) {
     var data = {
         dungeon: $("#dungeon").find("option:selected").text(),
@@ -39,9 +41,11 @@ var ajax_confirm_key = function (fnSuccess, fnError) {
     };
     ajax(data, "confirm_key", fnSuccess, fnError);
 };
-var ajax_logout = function () {
-    ajax(null, "logout");
+
+var ajax_logout = function (fnSuccess) {
+    ajax(null, "logout", fnSuccess);
 };
+
 var ajax_query_key = function (fnSuccess, fnError) {
     ajax(null, "query_key", fnSuccess, fnError);
 };

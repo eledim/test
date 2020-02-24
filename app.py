@@ -31,7 +31,6 @@ def before_action():
     if not request.path == '/signin' and not request.path == '/' and request.method == 'GET':
         if not 'username' in session:
             print ('not username in session')
-            print(session.get('id'))
             session['newurl'] = request.path
             return redirect('/signin')
             # return redirect(url_for('home'))
@@ -59,7 +58,6 @@ def signin2():
 
 @app.route('/key_page', methods=['GET'])
 def key_page():
-    print(session.get('id'))
     # username = request.args.get('username')
     # if request.cookies.get('username') ==  session.get('username') \
     #         and request.cookies.get('password') == session.get('password')\
@@ -137,7 +135,6 @@ def add_cookie(ret, username, password):
 def add_session(username, password):
     session['username'] = username
     session['password'] = password
-    print(session.get('id'))
     print('add_session username' + username + 'password' + password)
 
 
@@ -184,8 +181,8 @@ def confirm_key():
     else:
         character_id = character_values[0][0]
 
-    key_values = exe_sql('select level from userkey where userid=%s and character_id=%s and dungeon = %s',
-                         [userid, character_id, dungeon]);
+    key_values = exe_sql('select level from userkey where userid=%s and character_id=%s',
+                         [userid, character_id]);
     # 已有key记录且等级小，更新
     if len(key_values) > 0:
         ret_level = key_values[0][0]

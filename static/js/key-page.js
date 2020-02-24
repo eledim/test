@@ -84,8 +84,7 @@ $(function () {
     //注销
     $("#logout").on("click", function (event) {
         event.preventDefault();
-        ajax_logout();
-        redirectToSignin();
+        ajax_logout(redirectToSignin);
         // $.cookie('username', null);
         // $.cookie('password', null);
     });

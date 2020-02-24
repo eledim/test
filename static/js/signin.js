@@ -21,6 +21,9 @@ var setCookieAndRedirectToHome = function (ajax_data, params) {
 // 登录
 $('#login-button').click(function (event) {
     event.preventDefault();
-    ajax_singin($("input[name=username]").val(), $("input[name=password]").val(), setCookieAndRedirectToHome);
+    var username = $("input[name=username]").val()
+    var password = $("input[name=password]").val()
+    if (username != "" && password != "")
+        ajax_singin(username, password, setCookieAndRedirectToHome);
 });
 
