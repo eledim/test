@@ -11,15 +11,19 @@ body{
     color: #ebdec2;
 }
 .key-form{
-    margin-top:50px;
+    margin-top:20px;
 }
-
+.key-form .column{
+    margin-bottom:20px;
+}
 select.metro-35 {
     height: 38px;
     width: 120px;
     line-height: 1.5em;
     font-size: 1.224rem;
-    background-color: rgba(10, 19, 25,0.9);
+    background-color: #353b41;
+    border-color: #c77e19;
+/*rgba(10, 19, 25,0.9);*/
 }
 select {
     color: #ebdec2;
@@ -38,7 +42,8 @@ select {
     width: 120px;
     display: inline-block;
     border-radius: 1px;
-    background-color: rgba(10, 19, 25,0.6);
+    background-color: rgba(10, 19, 25,0);
+    border-color: #c77e19;
 }
 .search-input{
     color: #ebdec2;
@@ -50,7 +55,7 @@ select {
 }
 .confirm-btn{
     /*display: inline-block;*/
-    margin-top: 40px;
+    /*margin-top: 40px;*/
 }
 .confirm-btn a {
     min-width: 155px;
@@ -68,7 +73,7 @@ select {
     margin: 10px 30px 10px 30px;
 }
 #key_table_wrapper{
-    width: 50%;
+    width: 75%;
     margin: 80px auto 15px auto;
 }
 
@@ -240,11 +245,31 @@ table.dataTable tbody tr.even {
     padding: 0 20px;
     position: relative;
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: initial;
     z-index: 0;
 }
 .SiteNav-pageLink {
     color: #f8b700;
     /*font-size: 1rem;*/
     line-height: 1.5em;
+}
+
+.modal-content {
+    background-color: #353b41e9;
+    border-radius: 2px;
+    /*#051419*/
+}
+.modal-header {
+    border-bottom: 1px solid #ae701c;
+    /*#842a2a;*/
+    /*#a11a1a;*/
+}
+.modal-footer {
+    border-top: 1px solid #ae701c;
+}
+.close {
+    color: #ffffff;
+}
+.close:focus, .close:hover {
+    color: #ffffff;
 }

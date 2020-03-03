@@ -127,9 +127,8 @@ def logout():
 def add_cookie(ret, username, password):
     #设置cookie
     ret.set_cookie('username',username)
-
     ret.set_cookie('password', password)
-    print('add_cookie username' + username + 'password' + password)
+    print('add_cookie username：' + username + ' password：' + password)
 
 
 def add_session(username, password):
@@ -153,12 +152,12 @@ def confirm_key():
     #  萨满祭司Shaman
     #  武僧Monk
     #  恶魔猎手Demon Hunter
-    a = request.get_data()
-    dict1 = json.loads(a)
-    level = dict1["level"]
-    dungeon = dict1["dungeon"]
+    jsonstr = request.get_data()
+    dict = json.loads(jsonstr)
+    level = dict["level"]
+    dungeon = dict["dungeon"]
     # username = dict1["username"]
-    character = dict1["character"]
+    character = dict["character"]
     username = request.cookies.get('username')
     # level = request.form['level']
     # dungeon = request.form['dungeon']

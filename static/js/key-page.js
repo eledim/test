@@ -88,7 +88,10 @@ $(function () {
         // $.cookie('username', null);
         // $.cookie('password', null);
     });
+   $("#modal_add").on("click",function () {
+        $("#myModal").modal("show");
 
+   })
     //页面载入后执行
     query_key();
 })
