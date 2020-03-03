@@ -79,6 +79,7 @@ $(function () {
             if(data.stat == "ok")
                 query_key();
         });
+         $("#myModal").modal("hide");
     });
 
     //注销

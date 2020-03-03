@@ -186,8 +186,8 @@ def confirm_key():
     if len(key_values) > 0:
         ret_level = key_values[0][0]
         if int(ret_level) < int(level):
-            exe_sql('update userkey set level = %s where userid = %s and character_id = %s and dungeon = %s',
-                    [level, userid, character_id, dungeon])
+            exe_sql('update userkey set level = %s, dungeon = %s where userid = %s and character_id = %s ',
+                    [level, dungeon, userid, character_id])
             return ret_ok_json("update key")
     # 无key记录，新增
     else:
