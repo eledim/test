@@ -19,21 +19,28 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的
 # site = 'http://127.0.0.1:5000/'
 
 # 拦截器
-# 没有session，则返回登录
+# 默认不拦截，没有session，则返回登录
 @app.before_request
 def before_action():
     print(request.path)
-    allow_suffix = ['.ico', '.jpg', '.css', '.ttf', '.html', '.js', '.png'];
-    for i in allow_suffix:
-        if request.path.find(i) != -1:
-            return
+    if request.method == 'GET':
+        # 资源后缀白名单
+        allow_suffix = ['.ico', '.jpg', '.css', '.ttf', '.html', '.js', '.png'];
+        for i in allow_suffix:
+            if request.path.find(i) != -1:
+                return
+        # 没有session的get请求重定向
+        if not request.path == '/signin' and not request.path == '/':
+            if(not has_session()):
+                return redirect('/signin')#注意return
 
-    if not request.path == '/signin' and not request.path == '/' and request.method == 'GET':
-        if not 'username' in session:
-            print ('not username in session')
-            session['newurl'] = request.path
-            return redirect('/signin')
-            # return redirect(url_for('home'))
+def has_session():
+    if not 'username' in session:
+        print('not username in session')
+        # session['newurl'] = request.path
+        return False
+    return True
+        # return redirect(url_for('home'))
 
 # @app.after_request
 # def after_request_action(res):
@@ -63,7 +70,8 @@ def key_page():
     #         and request.cookies.get('password') == session.get('password')\
     #         and session.get('username') != None:
     # if session.get('username') != None:
-    return render_template('key_page.html', username=request.cookies.get('username'))
+    return render_template('key_page.html', username=session.get('username'))
+     #request.cookies.get('username'))
     # else :
     #     return render_template('signin.html')
 
