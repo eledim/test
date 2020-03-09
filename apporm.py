@@ -5,6 +5,11 @@ from flask import Flask, request, render_template, session, Response, redirect, 
 import uuid
 import json
 import os
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from orm import User
 from util import *
 from datetime import timedelta
 from flask import jsonify
@@ -17,6 +22,10 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的
 
 # site = 'http://eledim.xyz/'
 # site = 'http://127.0.0.1:5000/'
+# 初始化数据库连接:
+engine = create_engine('mysql+mysqlconnector://{user}:{host}@{passwd}:{port}/{db}'.format(**config4))
+# 创建DBSession类型:
+DBSession = sessionmaker(bind=engine)
 
 # 拦截器
 # 默认不拦截，没有session，则返回登录
@@ -111,8 +120,20 @@ def signin():
     if len(values) == 0:
         id = str(uuid.uuid1());
         userid = str(uuid.uuid1());
-        exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
-                [id, userid, username, password])
+        # exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
+        #         [id, userid, username, password])
+
+        # 创建session对象:
+        sql_session = DBSession()
+        # 创建新User对象:
+        new_user = User(id=id, username=username,userid=userid,password=password)
+        # 添加到session:
+        sql_session.add(new_user)
+        # 提交即保存到数据库:
+        sql_session.commit()
+        # 关闭session:
+        sql_session.close()
+
         ret = ret_ok_json("add user success")
         print("add user success")
         add_cookie(ret, username, password)
