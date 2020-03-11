@@ -40,4 +40,11 @@ config3 = {
     'db': 'wow_key',
     'charset': 'utf8'
 }
-
+config4 = {
+    'host': '101.37.116.142',
+    'port': 3306,
+    'user': 'root',
+    'passwd': 'Diablo!9234',
+    'db': 'wow_key',
+    'charset': 'utf8'
+}

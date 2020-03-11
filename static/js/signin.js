@@ -8,7 +8,7 @@ var setCookieAndRedirectToHome = function (ajax_data, params) {
         // }
         $('form').fadeOut(500);
         $('.wrapper').addClass('form-success');
-        $(location).attr('href', site + "key_page");/*?username=" + params.username);*/
+        $(location).attr('href', site + "blog");/*?username=" + params.username);*/
         console.log("signin success");
     } else {
         //$(location).attr('href', site + "signin");

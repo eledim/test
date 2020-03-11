@@ -1,4 +1,5 @@
 # 导入:
+from sqlalchemy import Sequence, Integer
 from sqlalchemy import Column, String, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -48,3 +49,15 @@ class Character(Base):
     clazz = Column(String(20))
     item_level = Column(String(20))
     userid = Column(String(20))
+
+
+class Article(Base):
+    # 表的名字:
+    __tablename__ = 'article'
+    id = Column(Integer, autoincrement=True,primary_key=True)
+    title = Column(String(200))
+    create_time = Column(Integer)
+    modify_time = Column(Integer)
+    read_times = Column(Integer)
+    content = Column(String(200))
+    user = Column(Integer)

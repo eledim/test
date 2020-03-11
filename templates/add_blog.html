@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Eledim's Blog {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/blog.css")}}'>
+{% endblock %}
+{% block content %}
+    {% include 'top.html' %}
+<!--    <div>-->
+<!--        <div class="head_block">添加文章</div>-->
+<!--        <hr>-->
+<!--    </div>-->
+    <div class="add_block">
+        <div class="title_add">
+            <span>标题：</span>
+            <input type="text" id="title">
+        </div>
+        <br>
+        <div class="content_text_add">
+            <div id="editor">
+<!--                <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>-->
+            </div>
+<!--            <textarea rows="22" cols="120">-->
+<!--            </textarea>-->
+        </div>
+        <br>
+        <button id="add_blog">确定</button>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src='{{ url_for("static", filename="js/add_blog.js") }}'></script>
+    <script src='{{ url_for("static", filename="js/lib/wangEditor.min.js") }}'></script>
+    <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<!--    <script type="text/javascript" src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>-->
+    <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create()
+    </script>
+{% endblock %}
