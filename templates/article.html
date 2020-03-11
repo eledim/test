@@ -4,15 +4,20 @@
     <link rel="stylesheet" href='{{ url_for("static", filename="css/blog.css")}}'>
 {% endblock %}
 {% block content %}
-    {% include 'top.html' %}
-<!--    <div>-->
-<!--        <div class="head_block">文章</div>-->
-<!--        <hr>-->
-<!--    </div>-->
-    <div>
-        <div class="title"></div>
-        <div class="content_text"></div>
+    <div class="back">
+        {% include 'top.html' %}
+    <div class="article_back">
+        <div class="article_body">
+            <h1 class="article_title"></h1>
+            <div class="article_time"></div>
+            <div class="content_text"></div>
+        </div>
     </div>
+    <div class="bg_foot"></div>
+
+    </div>
+
+
 {% endblock %}
 {% block js %}
     <script src='{{ url_for("static", filename="js/article.js") }}'></script>

@@ -54,6 +54,7 @@ def before_action():
                     and session.get('username') != None):
                 return redirect('/signin')  # 注意return
 
+
 def has_session():
     if not 'username' in session:
         print('not username in session')
@@ -74,15 +75,23 @@ def home():
     return render_template('signin.html')
 
 
-@app.route('/blog', methods=['GET'])
-def blog():
-    return render_template('blog.html')
+@app.route('/<path>', methods=['GET'])
+def navigate(path):
+    return render_template(path + '.html')
 
 
-@app.route('/signin', methods=['GET'])
-# @cache(max_age=3600, public=True)
-def signin_form():
-    return render_template('signin.html')
+
+@app.route('/article/<id>', methods=['GET'])
+def article(id):
+    print(id)
+    return render_template('article.html')
+
+
+
+# @app.route('/signin', methods=['GET'])
+# # @cache(max_age=3600, public=True)
+# def signin_form():
+#     return render_template('signin.html')
 
 
 @app.route('/signin2', methods=['GET'])
@@ -97,18 +106,10 @@ def add_blog():
         return render_template('add_blog.html')
     return redirect('/blog')
 
+
 @app.route('/key_page', methods=['GET'])
-# @dont_cache()
 def key_page():
-    # username = request.args.get('username')
-    # if request.cookies.get('username') ==  session.get('username') \
-    #         and request.cookies.get('password') == session.get('password')\
-    #         and session.get('username') != None:
-    # if session.get('username') != None:
     return render_template('key_page.html', username=session.get('username'))
-     #request.cookies.get('username'))
-    # else :
-    #     return render_template('signin.html')
 
 
 # 以下为post请求
@@ -169,6 +170,7 @@ def signin():
             ret = ret_err_json("password error")
     return ret
 
+
 @app.route('/logout', methods=['POST'])
 def logout():
     session.clear()
@@ -207,7 +209,7 @@ def get_dict(ret):
 
 @app.route('/get_blog_title', methods=['POST'])
 def get_blog_title():
-    ret = query_all(Article)
+    ret = query_all(Article).order_by(-Article.create_time).all()#Article.create_time.desc()
     return ret_ok_json(get_dict_list(ret))
     # json.dumps(retd, default=lambda o: o.__dict__, sort_keys=True, indent=4))
 
@@ -218,7 +220,7 @@ def get_blog_content():
     dict = json.loads(jsonstr)
     id = dict["id"]
     id=id[id.rindex('/')+1:]
-    ret = query(Article,id)
+    ret = query_all(Article).filter(Article.id == id).one()
     return ret_ok_json(get_dict(ret))
 
 
@@ -234,11 +236,6 @@ def do_add_blog():
     add(article)
     return ret_ok_json("")
 
-
-@app.route('/article/<id>', methods=['GET'])
-def article(id):
-    print(id)
-    return render_template('article.html')
 # 提交key
 @app.route('/confirm_key', methods=['POST'])
 def confirm_key():

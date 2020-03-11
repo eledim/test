@@ -13,6 +13,7 @@ from flask import jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from orm import Article
 from properties import *
 
 def main():
@@ -58,14 +59,14 @@ def add(dto):
 
 def query(dto,id):
     sql_session = DBSession()
-    ret = sql_session.query(dto).filter(dto.id == id).one()
+    ret = sql_session.query(dto)
     sql_session.close()
     return ret
 
 
 def query_all(dto):
     sql_session = DBSession()
-    ret = sql_session.query(dto).all()
+    ret = sql_session.query(dto)
     sql_session.close()
     return ret
 

@@ -1,4 +1,8 @@
-var html = $(".article")[0].outerHTML
+// var html = $(".article")[0].outerHTML
+html = '<li class="article">\n' +
+    '                    <a href="#"></a>\n' +
+    '                    <div class="time"></div>\n' +
+    '                </li>'
 ajax_get_blog_title(function (data) {
     data = data.response
     for(var a in data){
@@ -10,13 +14,6 @@ ajax_get_blog_title(function (data) {
         $(".articlelist").append($html)
     }
 })
-function getTime(data) {
-    var time = (data + "")
-    if (time == 'null' || time == "")
-        return ''
-    time = time.slice(0, 4) + '/' + time.slice(4, 6) + '/' + time.slice(6, 8) + ' '
-        + time.slice(8, 10) + ':' + time.slice(10, 12) + ':' + time.slice(12, 14)
-    return time
-}
+
 
 

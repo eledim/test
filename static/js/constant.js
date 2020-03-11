@@ -87,3 +87,11 @@ function getLocalTime() {
 function time2TimeStap (timer) {
     return new Date(timer).getTime();
 }
+function getTime(data) {
+    var time = (data + "")
+    if (time == 'null' || time == "")
+        return ''
+    time = time.slice(0, 4) + '/' + time.slice(4, 6) + '/' + time.slice(6, 8) + ' '
+        + time.slice(8, 10) + ':' + time.slice(10, 12) + ':' + time.slice(12, 14)
+    return time
+}
