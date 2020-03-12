@@ -1,8 +1,15 @@
+html,body{height:initial}
+html{
+    background: #0b1319 !important;
+}
 body{
     background-color: #0b1319 !important;/*rgba(10, 19, 25, 0.5);*//*background: #0b1319;*//*#d1d7e1;*/
     background:#0b1319 !important;
     color: #ebdec2;
     font-size: 17px;
+}
+body.mobile{
+    font-size: 32px;
 }
 .top{
     /*color: #ebdec2;*/
@@ -60,6 +67,10 @@ select {
 .confirm-btn a {
     min-width: 155px;
 }
+.mobile .confirm-btn a {
+    min-width: 255px;
+}
+
 .confirm-btn .Button-inner{
     padding: 12px 30px;
 }
@@ -76,7 +87,10 @@ select {
     width: 75%;
     margin: 80px auto 15px auto;
 }
-
+.mobile #key_table_wrapper{
+    width: 95%;
+    margin: 80px auto 15px auto;
+}
 .inline{
     display: inline;
 }
@@ -284,12 +298,22 @@ Button-label a:focus, a:hover {
 label {
     font-weight: 600;
 }
+/*登录信息*/
 .right p{
     font-size: 18px;
+}
+.mobile .right p{
+    font-size: 28px;
 }
 .h4, h4 {
     font-size: 20px;
 }
 .Button-label{
     font-weight: 600;
+}
+
+@media (min-width: 720px){
+    .Button--ghost {
+    font-size: 3rem;
+    }
 }

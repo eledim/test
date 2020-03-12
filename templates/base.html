@@ -18,6 +18,12 @@
 </head>
 
 <body>
+     <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+        {
+            document.body.classList.add('mobile');
+        }
+     </script>
 {% block content %} 这里定义了一个名为content的block {% endblock %}
 
 <script src='{{ url_for("static", filename="js/lib/jquery.min.js") }}'></script>
