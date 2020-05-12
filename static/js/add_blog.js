@@ -11,7 +11,8 @@
            create_time:parseInt(getFullTime())
        }
         ajax(params, "do_add_blog",doSuccess(function (data) {
-            alert("添加成功")
+            alert("添加成功:"+data.response)
+            $(location).attr('href', site + 'article/'+data.response);
         }));
    })
 

@@ -313,7 +313,7 @@ label {
 }
 
 @media (min-width: 720px){
-    .Button--ghost {
+    .mobile .Button--ghost {
     font-size: 3rem;
     }
 }

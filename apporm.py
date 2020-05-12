@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, render_template, session, Response, redirect, url_for
+from flask import Flask, request, render_template, session, Response, redirect, url_for, abort
 import uuid
 import json
 import os
@@ -47,6 +47,9 @@ def before_action():
         for i in allow_suffix:
             if request.path.find(i) != -1:
                 return
+        if request.path.find('article') != -1 or request.path.find('blog') != -1:
+            return
+
         # 没有session的get请求重定向
         if not request.path == '/signin' and not request.path == '/':
             if not (request.cookies.get('username') == session.get('username') \
@@ -72,12 +75,15 @@ def has_session():
 @app.route('/', methods=['GET', 'POST'])
 # @cache_for(hours=3)
 def home():
-    return render_template('signin.html')
+    return render_template('blog.html')
 
 
 @app.route('/<path>', methods=['GET'])
 def navigate(path):
-    return render_template(path + '.html')
+    file_name = path + '.html'
+    if os.access('templates/' + file_name, os.R_OK):
+        return render_template(file_name)
+    abort(404)
 
 
 
@@ -229,12 +235,17 @@ def do_add_blog():
     jsonstr = request.get_data()
     dict = json.loads(jsonstr)
     content = markdown.markdown(dict["content"])
-    article  = Article(content=content,title=dict["title"],create_time=dict["create_time"])
-    # exe_sql('	INSERT INTO article\
-    #             (title, create_time, modify_time, read_times, content, user)\
-    #             VALUES (%s, 0, 0, 0, %s, 0)',(dict["title"],content))
-    add(article)
-    return ret_ok_json("")
+    if dict["title"] == "":
+        return ret_err_json("")
+    # article = Article(content=content, title=dict["title"], create_time=dict["create_time"])
+    # add(article)
+    # 返回添加的id
+    ret = exe_sql('	INSERT INTO article\
+                (title, create_time, modify_time, read_times, content, user)\
+                VALUES (%s, %s, 0, 0, %s, 0)', (dict["title"],dict["create_time"], content), 'SELECT LAST_INSERT_ID()')
+
+    # ret = exe_sql('SELECT LAST_INSERT_ID()')
+    return ret_ok_json(ret[0][0])
 
 # 提交key
 @app.route('/confirm_key', methods=['POST'])
