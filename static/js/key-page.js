@@ -79,7 +79,7 @@ $(function () {
             if(data.stat == "ok")
                 query_key();
         });
-         $("#myModal").modal("hide");
+
     });
 
     //注销
@@ -89,10 +89,19 @@ $(function () {
         // $.cookie('username', null);
         // $.cookie('password', null);
     });
+
+
    $("#modal_add").on("click",function () {
         $("#myModal").modal("show");
-
    })
+
+
+    // 模态框关闭
+    $(".modal .confirm-btn").on("click",function () {
+        $("#myModal").modal("hide");
+    })
+
+
     //页面载入后执行
     query_key();
 })

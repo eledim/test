@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, render_template, session, Response, redirect, url_for
+from flask import Flask, request, render_template, session, Response, redirect, url_for, abort
 import uuid
 import json
 import os
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from orm import *
 from util import *
 from datetime import timedelta
 from flask import jsonify
@@ -17,6 +22,19 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的
 
 # site = 'http://eledim.xyz/'
 # site = 'http://127.0.0.1:5000/'
+import codecs, markdown
+
+# 读取 markdown 文本
+# input_file = codecs.open("some_file.md", mode="r", encoding="utf-8")
+# text = input_file.read()
+
+# 转为 html 文本
+# html = markdown.markdown(text)
+
+# 保存为文件
+# output_file = codecs.open("some_file.html", mode="w", encoding="utf-8")
+# output_file.write(html)
+
 
 # 拦截器
 # 默认不拦截，没有session，则返回登录
@@ -29,12 +47,16 @@ def before_action():
         for i in allow_suffix:
             if request.path.find(i) != -1:
                 return
+        if request.path.find('article') != -1 or request.path.find('blog') != -1:
+            return
+
         # 没有session的get请求重定向
         if not request.path == '/signin' and not request.path == '/':
             if not (request.cookies.get('username') == session.get('username') \
                     and request.cookies.get('password') == session.get('password') \
                     and session.get('username') != None):
                 return redirect('/signin')  # 注意return
+
 
 def has_session():
     if not 'username' in session:
@@ -53,13 +75,29 @@ def has_session():
 @app.route('/', methods=['GET', 'POST'])
 # @cache_for(hours=3)
 def home():
-    return render_template('signin.html')
+    return render_template('blog.html')
 
 
-@app.route('/signin', methods=['GET'])
-# @cache(max_age=3600, public=True)
-def signin_form():
-    return render_template('signin.html')
+@app.route('/<path>', methods=['GET'])
+def navigate(path):
+    file_name = path + '.html'
+    if os.access('templates/' + file_name, os.R_OK):
+        return render_template(file_name)
+    abort(404)
+
+
+
+@app.route('/article/<id>', methods=['GET'])
+def article(id):
+    print(id)
+    return render_template('article.html')
+
+
+
+# @app.route('/signin', methods=['GET'])
+# # @cache(max_age=3600, public=True)
+# def signin_form():
+#     return render_template('signin.html')
 
 
 @app.route('/signin2', methods=['GET'])
@@ -67,18 +105,17 @@ def signin2():
     return render_template('home.html')
 
 
+@app.route('/add_blog', methods=['GET'])
+def add_blog():
+    name = session.get('username')
+    if name=='ele' or name=='admin' :
+        return render_template('add_blog.html')
+    return redirect('/blog')
+
+
 @app.route('/key_page', methods=['GET'])
-# @dont_cache()
 def key_page():
-    # username = request.args.get('username')
-    # if request.cookies.get('username') ==  session.get('username') \
-    #         and request.cookies.get('password') == session.get('password')\
-    #         and session.get('username') != None:
-    # if session.get('username') != None:
     return render_template('key_page.html', username=session.get('username'))
-     #request.cookies.get('username'))
-    # else :
-    #     return render_template('signin.html')
 
 
 # 以下为post请求
@@ -111,8 +148,20 @@ def signin():
     if len(values) == 0:
         id = str(uuid.uuid1());
         userid = str(uuid.uuid1());
-        exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
-                [id, userid, username, password])
+        # exe_sql('insert into user (id, userid,username,password) values (%s, %s,%s,%s)',
+        #         [id, userid, username, password])
+
+        # 创建session对象:
+        sql_session = DBSession()
+        # 创建新User对象:
+        new_user = User(id=id, username=username,userid=userid,password=password)
+        # 添加到session:
+        sql_session.add(new_user)
+        # 提交即保存到数据库:
+        sql_session.commit()
+        # 关闭session:
+        sql_session.close()
+
         ret = ret_ok_json("add user success")
         print("add user success")
         add_cookie(ret, username, password)
@@ -150,6 +199,53 @@ def add_session(username, password):
     session['password'] = password
     print('add_session username' + username + 'password' + password)
 
+
+def get_dict_list(ret):
+    list = []
+    for r in ret:
+        retd = r.__dict__
+        retd['_sa_instance_state'] = ''
+        list.append(retd)
+    return list
+
+def get_dict(ret):
+    retd = ret.__dict__
+    retd['_sa_instance_state'] = ''
+    return retd
+
+@app.route('/get_blog_title', methods=['POST'])
+def get_blog_title():
+    ret = query_all(Article).order_by(-Article.create_time).all()#Article.create_time.desc()
+    return ret_ok_json(get_dict_list(ret))
+    # json.dumps(retd, default=lambda o: o.__dict__, sort_keys=True, indent=4))
+
+
+@app.route('/get_blog_content', methods=['POST'])
+def get_blog_content():
+    jsonstr = request.get_data()
+    dict = json.loads(jsonstr)
+    id = dict["id"]
+    id=id[id.rindex('/')+1:]
+    ret = query_all(Article).filter(Article.id == id).one()
+    return ret_ok_json(get_dict(ret))
+
+
+@app.route('/do_add_blog', methods=['POST'])
+def do_add_blog():
+    jsonstr = request.get_data()
+    dict = json.loads(jsonstr)
+    content = markdown.markdown(dict["content"])
+    if dict["title"] == "":
+        return ret_err_json("")
+    # article = Article(content=content, title=dict["title"], create_time=dict["create_time"])
+    # add(article)
+    # 返回添加的id
+    ret = exe_sql('	INSERT INTO article\
+                (title, create_time, modify_time, read_times, content, user)\
+                VALUES (%s, %s, 0, 0, %s, 0)', (dict["title"],dict["create_time"], content), 'SELECT LAST_INSERT_ID()')
+
+    # ret = exe_sql('SELECT LAST_INSERT_ID()')
+    return ret_ok_json(ret[0][0])
 
 # 提交key
 @app.route('/confirm_key', methods=['POST'])
@@ -236,7 +332,6 @@ def query_key():
     return jsonify(values)
 
 
-
 # 旧登录
 def signin2():
     username = request.form['username']
@@ -244,6 +339,8 @@ def signin2():
     if username == 'admin' and password == 'password':
         return render_template('signin-ok.html', username=username)
     return render_template('home.html', message='Bad username or password', username=username)
+
+
 
 
 if __name__ == '__main__':

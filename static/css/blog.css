@@ -1,0 +1,125 @@
+html,body{height:100%}
+
+body{
+    box-sizing:border-box;
+    background-color: #f7f7f7;
+}
+/*14px 2.5-> 36px*/
+body.mobile{
+    font-size: 36px;
+}
+.back{
+    background-color: #f7f7f7;
+    height: 100%;
+}
+.head_line{
+    background-color: #ffffff;
+    padding-top: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+}
+.head_block{
+    margin: 5px 15px 5px 15px;
+    font-size: 18px;
+    display: inline-block;
+}
+.mobile .head_block{
+    font-size: 40px;
+}
+
+
+/*key*/
+.Pane-content .head_block{
+    float: left;
+    margin: 15px;
+    font-size: 16px;
+    display: inline-block;
+}
+.mobile .Pane-content .head_block{
+    font-size: 40px;
+}
+
+.Pane-content hr{
+    border-top: 0px solid rgba(51, 51, 51, 0);
+}
+.Pane-content .head_line{
+    background-color: transparent;
+    padding-top: 0px;
+}
+
+
+/*博客*/
+.blog_content{
+    width: 85%;
+    margin:20px auto
+}
+.mobile .blog_content{
+    width: 90%;
+}
+.add_blog{
+    margin: 20px;
+}
+.articlelist{
+    font-size: 16px;
+    list-style-type: lao;
+}
+.mobile .articlelist{
+    font-size: 40px;
+}
+.time{
+    font-size: 13px;
+}
+.mobile .time{
+    font-size: 30px;
+}
+.article{
+    margin-bottom: 18px;
+}
+
+
+/*文章*/
+.article_body{
+    background-color: #ffffff;
+    margin: 20px auto;
+    width: 61%;
+    padding: 20px 5em 20px 5em;
+}
+.mobile .article_body{
+    width: 95%;
+    padding: 20px 2em 20px 2em;
+}
+.article_title{
+    font-size: x-large;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+.mobile .article_title{
+    font-size: 1.4em;
+}
+.article_time{
+    /*margin-left: 15px;*/
+    margin-bottom: 1.4em;
+}
+.content_text p{
+    text-indent: 2em;
+    line-height: 1.9;
+}
+.content_text{
+    font-size: larger;
+}
+.mobile .content_text{
+    font-size: 1.1em;
+}
+
+
+/*添加*/
+.title_add{
+    font-size: 18px;
+}
+.add_block{
+    margin: 4em;
+    width: 80%;
+}
+#title{
+    width: 60%;
+}

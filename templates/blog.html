@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Eledim's Blog {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/blog.css")}}'>
+{% endblock %}
+{% block content %}
+    {% include 'top.html' %}
+    <div class="blog_content">
+        <div>
+            <ul class="articlelist">
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script src="static/js/blog.js" type="text/javascript"></script>
+{% endblock %}
