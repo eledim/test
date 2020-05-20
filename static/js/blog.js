@@ -1,3 +1,4 @@
+// 博客主页面，文章列表
 // var html = $(".article")[0].outerHTML
 html = '<li class="article">\n' +
     '                    <a href="#"></a>\n' +

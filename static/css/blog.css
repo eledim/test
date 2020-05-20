@@ -96,8 +96,8 @@ body.mobile{
 .mobile .article_title{
     font-size: 1.4em;
 }
-.article_time{
-    /*margin-left: 15px;*/
+
+.article_time_div{
     margin-bottom: 1.4em;
 }
 .content_text p{

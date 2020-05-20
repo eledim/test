@@ -85,6 +85,10 @@ def navigate(path):
         return render_template(file_name)
     abort(404)
 
+@app.route('/edit_blog/<id>', methods=['GET'])
+def edit_blog(id):
+    print(id)
+    return render_template('edit_blog.html')
 
 
 @app.route('/article/<id>', methods=['GET'])
@@ -215,7 +219,7 @@ def get_dict(ret):
 
 @app.route('/get_blog_title', methods=['POST'])
 def get_blog_title():
-    ret = query_all(Article).order_by(-Article.create_time).all()#Article.create_time.desc()
+    ret = query_all(Article).filter(Article.state == 0).order_by(-Article.create_time).all()#Article.create_time.desc()
     return ret_ok_json(get_dict_list(ret))
     # json.dumps(retd, default=lambda o: o.__dict__, sort_keys=True, indent=4))
 
@@ -226,8 +230,13 @@ def get_blog_content():
     dict = json.loads(jsonstr)
     id = dict["id"]
     id=id[id.rindex('/')+1:]
-    ret = query_all(Article).filter(Article.id == id).one()
-    return ret_ok_json(get_dict(ret))
+    try:
+        ret = query_all(Article).filter(Article.id == id, Article.state == 0).one()
+    except Exception as e:
+        return ret_err_json(str(e))
+    else:
+        return ret_ok_json(get_dict(ret))
+
 
 
 @app.route('/do_add_blog', methods=['POST'])
@@ -246,6 +255,42 @@ def do_add_blog():
 
     # ret = exe_sql('SELECT LAST_INSERT_ID()')
     return ret_ok_json(ret[0][0])
+
+
+@app.route('/do_edit_blog', methods=['POST'])
+def do_edit_blog():
+    jsonstr = request.get_data()
+    article = json_to_object(jsonstr, Article)
+    id = article.id
+    article.id = id[id.rindex('/') + 1:]
+    session = DBSession()
+    if article.state == 1:
+        session.query(Article).filter(Article.id == article.id).update({Article.state: article.state},
+           synchronize_session=False)
+        session.commit();
+        return ret_ok_json(article.id)
+    # session.query(Article).filter(Article.id == article.id).update({"title": Article.title + "099"}, synchronize_session=False)
+    # session.query(Article).filter(Article.id == 65).delete()
+    session.query(Article).filter(Article.id == article.id).update(
+        {Article.title: article.title,
+         Article.content: article.content,
+         Article.modify_time: article.modify_time}, synchronize_session=False)
+    # session.flush();与数据库同步sql
+    session.commit();
+    return ret_ok_json(article.id)
+
+
+def json_to_object(jsonstr,Object):
+    dict = json.loads(jsonstr)
+    a = Object()
+    for k, v in dict.items():
+        setattr(a, k, v)
+    return a
+
+
+@app.route('/do_delete_blog', methods=['POST'])
+def do_delete_blog():
+    return
 
 # 提交key
 @app.route('/confirm_key', methods=['POST'])

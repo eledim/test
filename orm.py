@@ -61,3 +61,4 @@ class Article(Base):
     read_times = Column(Integer)
     content = Column(String(200))
     user = Column(Integer)
+    state = Column(Integer)

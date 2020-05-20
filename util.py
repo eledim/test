@@ -16,13 +16,16 @@ from sqlalchemy.orm import sessionmaker
 from orm import Article
 from properties import *
 
+
 def main():
     pass
+
 
 # 初始化数据库连接:
 engine = create_engine('mysql+mysqlconnector://{user}:{passwd}@{host}:{port}/{db}'.format(**config4))
 # 创建DBSession类型:
 DBSession = sessionmaker(bind=engine)
+
 
 def getConn():
     # conn = mysql.connector.connect(user='root', password='1234][po', database='forum')
@@ -33,7 +36,16 @@ def getConn():
     return conn
 
 
-def exe_sql(sql_str, params=(), sql_str2=(),is_query=()):
+def call():
+    conn = getConn()
+    cursor = conn.cursor()
+    cursor.callproc('sp_getUsers')
+
+    for result in cursor.stored_results():
+        print(result.fetchall())
+
+
+def exe_sql(sql_str, params=(), sql_str2=(), is_query=()):
     conn = getConn()
     cursor = conn.cursor()
     cursor.execute(sql_str, params)
@@ -50,6 +62,7 @@ def exe_sql(sql_str, params=(), sql_str2=(),is_query=()):
     conn.close()
     return ret
 
+
 def add(dto):
     # 创建session对象:
     sql_session = DBSession()
@@ -61,7 +74,9 @@ def add(dto):
     # 关闭session:
     sql_session.close()
 
-def query(dto,id):
+
+
+def query(dto, id):
     sql_session = DBSession()
     ret = sql_session.query(dto)
     sql_session.close()
