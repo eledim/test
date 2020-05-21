@@ -13,6 +13,9 @@ from orm import *
 from util import *
 from datetime import timedelta
 from flask import jsonify
+import redis
+
+
 
 app = Flask(__name__)
 
@@ -227,7 +230,6 @@ def get_dict(ret):
     retd['_sa_instance_state'] = ''
     return retd
 
-
 @app.route('/get_blog_title', methods=['POST'])
 def get_blog_title():
     ret = query_all(Article).filter(Article.state == 0).order_by(
@@ -274,7 +276,7 @@ def do_add_blog():
 
 @app.route('/do_edit_blog', methods=['POST'])
 def do_edit_blog():
-    if auth(session.get('username')):
+    if not auth(session.get('username')):
         return ret_err_json('')
 
     jsonstr = request.get_data()
@@ -405,5 +407,6 @@ def signin2():
 
 
 if __name__ == '__main__':
+
     app.debug = True
     app.run()

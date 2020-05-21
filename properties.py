@@ -41,3 +41,15 @@ config3 = {
     'charset': 'utf8'
 }
 
+
+
+config_redis = {
+    'host': '101.37.116.142',
+    'port': 193
+    # 'password': 'a498211713'
+}
+config_redis_pool ={
+    'host': '101.37.116.142',
+    'port': 193,
+    "max_connections":1024
+}
