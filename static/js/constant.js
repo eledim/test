@@ -1,8 +1,7 @@
-// var  site = 'http://eledim.xyz/';
-// var site = 'http://127.0.0.1:5000/'
-// var site = 'http://101.37.116.142:191/'
+//公共变量、函数、逻辑
+
 var site = window.location.protocol + "//" + window.location.host + '/';
-//var  site = 'http://192.168.43.135/'
+
 var ajax = function (params, url, fnSuccess, fnError) {
     $.ajax({
         type: "post",
@@ -95,3 +94,11 @@ function getTime(data) {
         + time.slice(8, 10) + ':' + time.slice(10, 12) + ':' + time.slice(12, 14)
     return time
 }
+
+// top模块逻辑
+
+(function () {
+    var name = $.cookie('username');
+    if (name == "ele" || name == "admin")
+        $(".add_blog_btn").show();
+})()

@@ -53,7 +53,7 @@ def exe_sql(sql_str, params=(), sql_str2=(), is_query=()):
     if sql_str.find("se", 0, 3) >= 0 or sql_str.find("S", 0, 3) >= 0:
         ret = cursor.fetchall()
         cursor.rowcount
-    if sql_str2 != "":
+    if sql_str2 != ():
         cursor.execute(sql_str2)
         ret = cursor.fetchall()
         cursor.rowcount

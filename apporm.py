@@ -16,13 +16,14 @@ from flask import jsonify
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'eyJuZXd1cmwiOiIva2V5X3BhZ2'#os.urandom(24)  # 设置为24位的字符,每次运行服务器都是不同的，所以服务器启动一次上次的session就清除。
+app.config[
+    'SECRET_KEY'] = 'eyJuZXd1cmwiOiIva2V5X3BhZ2'  # os.urandom(24)  # 设置为24位的字符,每次运行服务器都是不同的，所以服务器启动一次上次的session就清除。
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # 设置session的保存时间。
-
 
 # site = 'http://eledim.xyz/'
 # site = 'http://127.0.0.1:5000/'
 import codecs, markdown
+
 
 # 读取 markdown 文本
 # input_file = codecs.open("some_file.md", mode="r", encoding="utf-8")
@@ -51,10 +52,10 @@ def before_action():
             return
 
         # 没有session的get请求重定向
-        if not request.path == '/signin' and not request.path == '/':
-            if not (request.cookies.get('username') == session.get('username') \
+        if request.path != '/signin' and request.path != '/':
+            if (request.cookies.get('username') != session.get('username') \
                     and request.cookies.get('password') == session.get('password') \
-                    and session.get('username') != None):
+                    and session.get('username') is not None):
                 return redirect('/signin')  # 注意return
 
 
@@ -64,7 +65,8 @@ def has_session():
         # session['newurl'] = request.path
         return False
     return True
-        # return redirect(url_for('home'))
+    # return redirect(url_for('home'))
+
 
 # @app.after_request
 # def after_request_action(res):
@@ -85,10 +87,15 @@ def navigate(path):
         return render_template(file_name)
     abort(404)
 
+
 @app.route('/edit_blog/<id>', methods=['GET'])
 def edit_blog(id):
     print(id)
-    return render_template('edit_blog.html')
+    if auth(session.get('username')):
+        return render_template('edit_blog.html')
+    return abort(400)
+    # redirect('/blog')
+
 
 
 @app.route('/article/<id>', methods=['GET'])
@@ -97,11 +104,14 @@ def article(id):
     return render_template('article.html')
 
 
-
 # @app.route('/signin', methods=['GET'])
 # # @cache(max_age=3600, public=True)
 # def signin_form():
 #     return render_template('signin.html')
+def auth(name):
+    if name == 'ele' or name == 'admin':
+        return True
+    return False
 
 
 @app.route('/signin2', methods=['GET'])
@@ -111,8 +121,7 @@ def signin2():
 
 @app.route('/add_blog', methods=['GET'])
 def add_blog():
-    name = session.get('username')
-    if name=='ele' or name=='admin' :
+    if auth(session.get('username')):
         return render_template('add_blog.html')
     return redirect('/blog')
 
@@ -131,8 +140,8 @@ def test():
     username2 = cookie.get("username")
     password2 = cookie.get("password")
     resp = Response("服务器返回信息")
-    #设置cookie，
-    resp.set_cookie('username','derek')
+    # 设置cookie，
+    resp.set_cookie('username', 'derek')
     resp.delete_cookie('username')
 
 
@@ -158,7 +167,7 @@ def signin():
         # 创建session对象:
         sql_session = DBSession()
         # 创建新User对象:
-        new_user = User(id=id, username=username,userid=userid,password=password)
+        new_user = User(id=id, username=username, userid=userid, password=password)
         # 添加到session:
         sql_session.add(new_user)
         # 提交即保存到数据库:
@@ -192,8 +201,8 @@ def logout():
 
 
 def add_cookie(ret, username, password):
-    #设置cookie
-    ret.set_cookie('username',username)
+    # 设置cookie
+    ret.set_cookie('username', username)
     ret.set_cookie('password', password)
     print('add_cookie username：' + username + ' password：' + password)
 
@@ -212,14 +221,17 @@ def get_dict_list(ret):
         list.append(retd)
     return list
 
+
 def get_dict(ret):
     retd = ret.__dict__
     retd['_sa_instance_state'] = ''
     return retd
 
+
 @app.route('/get_blog_title', methods=['POST'])
 def get_blog_title():
-    ret = query_all(Article).filter(Article.state == 0).order_by(-Article.create_time).all()#Article.create_time.desc()
+    ret = query_all(Article).filter(Article.state == 0).order_by(
+        -Article.create_time).all()  # Article.create_time.desc()
     return ret_ok_json(get_dict_list(ret))
     # json.dumps(retd, default=lambda o: o.__dict__, sort_keys=True, indent=4))
 
@@ -229,14 +241,17 @@ def get_blog_content():
     jsonstr = request.get_data()
     dict = json.loads(jsonstr)
     id = dict["id"]
-    id=id[id.rindex('/')+1:]
+    id = id[id.rindex('/') + 1:]
     try:
         ret = query_all(Article).filter(Article.id == id, Article.state == 0).one()
     except Exception as e:
         return ret_err_json(str(e))
     else:
-        return ret_ok_json(get_dict(ret))
+        dict = get_dict(ret)
+        if auth(session.get("username")):
 
+            dict["is_edit"] = 1
+        return ret_ok_json(dict)
 
 
 @app.route('/do_add_blog', methods=['POST'])
@@ -251,7 +266,7 @@ def do_add_blog():
     # 返回添加的id
     ret = exe_sql('	INSERT INTO article\
                 (title, create_time, modify_time, read_times, content, user)\
-                VALUES (%s, %s, 0, 0, %s, 0)', (dict["title"],dict["create_time"], content), 'SELECT LAST_INSERT_ID()')
+                VALUES (%s, %s, 0, 0, %s, 0)', (dict["title"], dict["create_time"], content), 'SELECT LAST_INSERT_ID()')
 
     # ret = exe_sql('SELECT LAST_INSERT_ID()')
     return ret_ok_json(ret[0][0])
@@ -259,28 +274,30 @@ def do_add_blog():
 
 @app.route('/do_edit_blog', methods=['POST'])
 def do_edit_blog():
+    if auth(session.get('username')):
+        return ret_err_json('')
+
     jsonstr = request.get_data()
     article = json_to_object(jsonstr, Article)
     id = article.id
     article.id = id[id.rindex('/') + 1:]
-    session = DBSession()
+    db_session = DBSession()
     if article.state == 1:
-        session.query(Article).filter(Article.id == article.id).update({Article.state: article.state},
-           synchronize_session=False)
-        session.commit();
+        db_session.query(Article).filter(Article.id == article.id).update({Article.state: article.state}, synchronize_session=False)
+        db_session.commit();
         return ret_ok_json(article.id)
     # session.query(Article).filter(Article.id == article.id).update({"title": Article.title + "099"}, synchronize_session=False)
     # session.query(Article).filter(Article.id == 65).delete()
-    session.query(Article).filter(Article.id == article.id).update(
+    db_session.query(Article).filter(Article.id == article.id).update(
         {Article.title: article.title,
          Article.content: article.content,
          Article.modify_time: article.modify_time}, synchronize_session=False)
     # session.flush();与数据库同步sql
-    session.commit();
+    db_session.commit();
     return ret_ok_json(article.id)
 
 
-def json_to_object(jsonstr,Object):
+def json_to_object(jsonstr, Object):
     dict = json.loads(jsonstr)
     a = Object()
     for k, v in dict.items():
@@ -291,6 +308,7 @@ def json_to_object(jsonstr,Object):
 @app.route('/do_delete_blog', methods=['POST'])
 def do_delete_blog():
     return
+
 
 # 提交key
 @app.route('/confirm_key', methods=['POST'])
@@ -384,8 +402,6 @@ def signin2():
     if username == 'admin' and password == 'password':
         return render_template('signin-ok.html', username=username)
     return render_template('home.html', message='Bad username or password', username=username)
-
-
 
 
 if __name__ == '__main__':
